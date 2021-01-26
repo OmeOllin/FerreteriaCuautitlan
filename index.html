@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es-MX">
+
+<head>
+    <title>Cat&aacute;logo Ferreter&iacute;a en Linea</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="rating" content="General">
+    <meta name="expires" content="never">
+    <meta name="language" content="Spanish, MX">
+    <meta name="description" content="Catálogo en linea de Ferreter&iacute; Cuautitl&aacute;n">
+    <meta name="keywords" content="HTML5,CSS,JavaScript, html5 session storage, html5 local storage">
+    <meta name="author" content="dcwebmakers.com">
+    <script src="Storage.js"></script>
+    <link rel="stylesheet" href="StorageStyle.css">
+</head>
+
+<body>
+    <form name="ShoppingList">
+        <fieldset>
+            <legend>Carrito de compras</legend>
+            <label>Item: <input type="text" name="name"></label>
+            <label>Cantidad: <input type="text" name="data"></label>
+    
+            <input type="button" value="Guardar"   onclick="SaveItem()">
+            <input type="button" value="Actualizar" onclick="ModifyItem()">
+            <input type="button" value="Eliminar" onclick="RemoveItem()">
+        </fieldset>
+        <div id="items_table">
+            <h2>Lista de Compras</h2>
+            <table id="list"></table>
+            <label><input type="button" value="Limpiar" onclick="ClearAll()">
+            * Eliminar todo en el carrito</label>
+        </div>
+    </form>    
+</body>
