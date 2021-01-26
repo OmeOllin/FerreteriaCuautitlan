@@ -1,28 +1,43 @@
 //add new key=>value to the HTML5 storage
 function SaveItem() {
-			
+
 	var name = document.forms.ShoppingList.name.value;
 	var data = document.forms.ShoppingList.data.value;
+	if (!validateItem(name, data)) { return; }
 	localStorage.setItem(name, data);
 	doShowAll();
-	
+
+}
+//------------------------------------------------------------------------------
+//validate a key value pair before HTML5 storage
+function validateItem(name, data) {
+	if (name == '') {
+		alert('No se ha seleccionado ning\u00FAn art\u00EDculo');
+		return false;
+	}
+	if (isNaN(data) || data <= 0) {
+		alert('La cantidad del art\u00EDculo seleccionado debe ser mayor a cero.');
+		return false;
+	}
+
+	return true;
 }
 //------------------------------------------------------------------------------
 //change an existing key=>value in the HTML5 storage
 function ModifyItem() {
 	var name1 = document.forms.ShoppingList.name.value;
 	var data1 = document.forms.ShoppingList.data.value;
+	if(!validateItem(name1, data1)){ return; }
 	//check if name1 is already exists
 	
-//check if key exists
-			if (localStorage.getItem(name1) !=null)
-			{
-			  //update
-			  localStorage.setItem(name1,data1);
-			  document.forms.ShoppingList.data.value = localStorage.getItem(name1);
-			}
-		
-	
+	//check if key exists
+	if (localStorage.getItem(name1) != null) {
+		//update
+		localStorage.setItem(name1, data1);
+		document.forms.ShoppingList.data.value = localStorage.getItem(name1);
+	}
+
+
 	doShowAll();
 }
 //-------------------------------------------------------------------------
@@ -47,10 +62,10 @@ function doShowAll() {
 		var list = "<tr><th>Item</th><th>Value</th></tr>\n";
 		var i = 0;
 		//for more advance feature, you can set cap on max items in the cart
-		for (i = 0; i <= localStorage.length-1; i++) {
+		for (i = 0; i <= localStorage.length - 1; i++) {
 			key = localStorage.key(i);
 			list += "<tr><td>" + key + "</td>\n<td>"
-					+ localStorage.getItem(key) + "</td></tr>\n";
+				+ localStorage.getItem(key) + "</td></tr>\n";
 		}
 		//if no item exists in the cart
 		if (list == "<tr><th>Item</th><th>Value</th></tr>\n") {
@@ -68,13 +83,13 @@ function doShowAll() {
  =====> Checking the browser support
  //this step may not be required as most of modern browsers do support HTML5
  */
- //below function may be redundant
+//below function may be redundant
 function CheckBrowser() {
 	if ('localStorage' in window && window['localStorage'] !== null) {
 		// we can use localStorage object to store data
 		return true;
 	} else {
-			return false;
+		return false;
 	}
 }
 //-------------------------------------------------
