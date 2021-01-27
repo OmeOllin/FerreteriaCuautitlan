@@ -1,432 +1,463 @@
 <!DOCTYPE HTML>
 <html lang="es-MX">
 
-<head>
-    <title>Cat&aacute;logo Ferreter&iacute;a Cuautitl&aacute;n</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="rating" content="General">
-    <meta name="expires" content="never">
-    <meta name="language" content="Spanish, MX">
-    <meta name="description" content="Cat&aacute;logo en linea de Ferreter&iacute; Cuautitl&aacute;n">
-    <meta name="keywords" content="Herramientas, Cuautitl&aacute;n, Ferreter&iacute; Clara Villasana">
-    <meta name="author" content="ollingeeks">
-    <!-- Storage management -->
-    <script src="https://omeollin.github.io/FerreteriaCuautitlan/js/Storage.js"></script>
-    <!-- Index additional styles -->
-    <link rel="stylesheet" href="https://omeollin.github.io/FerreteriaCuautitlan/css/Index.css">
-    <!-- Logo icon -->
-    <link rel="icon" href="https://omeollin.github.io/FerreteriaCuautitlan/img/logo.ico" type="image/x-icon" />
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
-    <!-- Google Fonts Roboto -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
-    <!-- MDB -->
-    <link rel="stylesheet" href="https://omeollin.github.io/FerreteriaCuautitlan/MDB5/css/mdb.min.css" />
-</head>
+    <head>
+        <title>Cat&aacute;logo Ferreter&iacute;a Cuautitl&aacute;n</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="rating" content="General">
+        <meta name="expires" content="never">
+        <meta name="language" content="Spanish, MX">
+        <meta name="description" content="Cat&aacute;logo en linea de Ferreter&iacute; Cuautitl&aacute;n">
+        <meta name="keywords" content="Herramientas, Cuautitl&aacute;n, Ferreter&iacute; Clara Villasana">
+        <meta name="author" content="ollingeeks">
+        <!-- Storage management -->
+        <script src="https://omeollin.github.io/FerreteriaCuautitlan/js/Storage.js"></script>
+        <!-- Index additional styles -->
+        <link rel="stylesheet" href="https://omeollin.github.io/FerreteriaCuautitlan/css/Index.css">
+        <!-- Logo icon -->
+        <link rel="icon" href="https://omeollin.github.io/FerreteriaCuautitlan/img/logo.ico" type="image/x-icon" />
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+        <!-- Google Fonts Roboto -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+        <!-- MDB -->
+        <link rel="stylesheet" href="https://omeollin.github.io/FerreteriaCuautitlan/MDB5/css/mdb.min.css" />
+    </head>
 
+    <body onload="doShowAll()">
+        <!-- <h2>Carrito de compras</h2>
+        <p>Inserte elementos y cantidad a su carrito de compras.</p>
+        <form name=ShoppingList>
 
-<body onload="doShowAll()">
-    <!-- <h2>Carrito de compras</h2>
-    <p>Inserte elementos y cantidad a su carrito de compras.</p>
-    <form name=ShoppingList>
+            <div id="main">
+                <table>
+                    <tr>
 
-        <div id="main">
-            <table>
-                <tr>
+                        <td><b>Elemento:</b><input type=text name=name></td>
+                        <td><b>Cantidad:</b><input type=text name=data></td>
 
-                    <td><b>Elemento:</b><input type=text name=name></td>
-                    <td><b>Cantidad:</b><input type=text name=data></td>
+                    </tr>
 
-                </tr>
-
-                <tr>
-                    <td>
-                        <input type=button value="Guardar" onclick="SaveItem()">
-                        <input type=button value="Actualizar" onclick="ModifyItem()">
-                        <input type=button value="Eliminar" onclick="RemoveItem()">
-                    </td>
-                </tr>
-            </table>
-        </div>
-
-        <div id="items_table">
-            <h3>Lista de Compras</h3>
-            <table id=list></table>
-            <p>
-                <label><input type=button value="Vaciar" onclick="ClearAll()">
-                    <i>* Eliminar todos los art&iacute;culos</i></label>
-            </p>
-        </div>
-    </form> -->
-    <!-- Navbar-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid justify-content-between">
-            <!-- Left elements -->
-            <div class="d-flex">
-                <!-- Brand -->
-                <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="#">
-                    <img src="https://omeollin.github.io/FerreteriaCuautitlan/img/logo.png" height="30px" alt=""
-                        loading="lazy" style="margin-top: 2px;" />
-                </a>
+                    <tr>
+                        <td>
+                            <input type=button value="Guardar" onclick="SaveItem()">
+                            <input type=button value="Actualizar" onclick="ModifyItem()">
+                            <input type=button value="Eliminar" onclick="RemoveItem()">
+                        </td>
+                    </tr>
+                </table>
             </div>
-            <!-- Left elements -->
 
-            <!-- Center elements -->
-            <ul class="navbar-nav flex-row d-md-flex">
-                <li class="nav-item mx-1 d-none d-md-block">
-                    <a class="nav-link" href="#">
-                        <span><i class="fas fa-download fa-lg"></i></span>
+            <div id="items_table">
+                <h3>Lista de Compras</h3>
+                <table id=list></table>
+                <p>
+                    <label><input type=button value="Vaciar" onclick="ClearAll()">
+                        <i>* Eliminar todos los art&iacute;culos</i></label>
+                </p>
+            </div>
+        </form> -->
+        <!-- Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid justify-content-between">
+                <!-- Left elements -->
+                <div class="d-flex">
+                    <!-- Brand -->
+                    <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="#">
+                        <img src="https://omeollin.github.io/FerreteriaCuautitlan/img/logo.png" height="30px" alt=""
+                            loading="lazy" style="margin-top: 2px;" />
                     </a>
-                </li>
-                <li class="nav-item mx-1">
-                    <span class="nav-link">0 - 0 / 0</span>
-                </li>
-                <li class="nav-item mx-1">
-                    <a class="nav-link" href="#">
-                        <span><i class="fas fa-shopping-cart fa-lg"></i></span>
-                        <span class="badge rounded-pill badge-notification bg-danger">1</span>
-                    </a>
-                </li>
-                <li class="nav-item dropdown mx-1">
-                    <a class="nav-link dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink" role="button"
-                        data-mdb-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-bars fa-lg"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                        <li class="nav-item d-md-none">
-                            <a class="dropdown-item" href="#">
-                                <span><i class="fas fa-download fa-lg"></i></span> Descargar PDF
-                            </a>
-                        </li>
-                        <li class="nav-item d-md-none">
-                            <a class="dropdown-item" href="#">
-                                <span><i class="fas fa-search fa-lg"></i></span> Buscar art&iacute;culo
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">
-                                <span><i class="fas fa-list-alt fa-lg"></i></span> Tabla de contenidos
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-            <!-- Center elements -->
-
-            <!-- Right elements -->
-            <ul class="navbar-nav flex-row mb-2 mb-lg-0">
-                <li class="nav-item mx-1 d-none d-md-block">
-                    <a class="nav-link" href="#">
-                        <span<i class="fas fa-search fa-lg"></i></span>
-                    </a>
-                </li>
-            </ul>
-            <!-- Right elements -->
-        </div>
-    </nav>
-    <!-- Navbar -->
-
-    <!-- Carousel wrapper -->
-    <div style="margin-top: 50px;" id="carouselBasicExample" class="d-flex justify-content-center carousel slide carousel-fade" data-mdb-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-mdb-target="#carouselBasicExample" data-mdb-slide-to="0" class="active"></li>
-            <li data-mdb-target="#carouselBasicExample" data-mdb-slide-to="1"></li>
-            <li data-mdb-target="#carouselBasicExample" data-mdb-slide-to="2"></li>
-        </ol>
-
-        <!-- Inner -->
-        <div style="width: 864px;" class="shadow-2-strong carousel-inner">
-            <!-- Single item -->
-            <div class="carousel-item active">
-                <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg" class="d-block w-100" alt="..." />
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>First slide label</h5>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                 </div>
+                <!-- Left elements -->
+
+                <!-- Center elements -->
+                <ul class="navbar-nav flex-row d-md-flex">
+                    <li style="width: 40px" class="nav-item px-3">
+                        <!-- Empty placeholder to balance distribution of elements -->
+                    </li>
+                    <li class="nav-item d-none d-md-block">
+                        <a class="nav-link px-3" href="#">
+                            <span><i class="fas fa-download fa-lg"></i></span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link px-3">0 - 0 / 0</span>
+                    </li>
+                    <li class="nav-item d-none d-md-block">
+                        <a class="nav-link px-3" href="#">
+                            <span><i class="fas fa-shopping-cart fa-lg"></i></span>
+                            <span class="badge rounded-pill badge-notification bg-danger">1</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown d-none d-md-block">
+                        <a class="nav-link px-3 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-mdb-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-bars fa-lg"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                            <li class="nav-item d-md-none">
+                                <a class="dropdown-item" href="#">
+                                    <span><i class="fas fa-download fa-lg"></i></span> Descargar PDF
+                                </a>
+                            </li>
+                            <li class="nav-item d-md-none">
+                                <a class="dropdown-item" href="#">
+                                    <span><i class="fas fa-search fa-lg"></i></span> Buscar art&iacute;culo
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <span><i class="fas fa-list-alt fa-lg"></i></span> Tabla de contenidos
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- Center elements -->
+
+                <!-- Right elements -->
+                <ul class="navbar-nav flex-row mb-2 mb-lg-0">
+                    <li class="nav-item d-none d-md-block">
+                        <a class="nav-link px-3" href="#">
+                            <span<i class="fas fa-search fa-lg"></i></span>
+                        </a>
+                    </li>
+                    <li class="nav-item d-md-none">
+                        <a class="nav-link px-3" href="#">
+                            <span><i class="fas fa-shopping-cart fa-lg"></i></span>
+                            <span class="badge rounded-pill badge-notification bg-danger">1</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown d-md-none">
+                        <a class="nav-link px-3 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-mdb-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-bars fa-lg"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                            <li class="nav-item d-md-none">
+                                <a class="dropdown-item" href="#">
+                                    <span><i class="fas fa-download fa-lg"></i></span> Descargar PDF
+                                </a>
+                            </li>
+                            <li class="nav-item d-md-none">
+                                <a class="dropdown-item" href="#">
+                                    <span><i class="fas fa-search fa-lg"></i></span> Buscar art&iacute;culo
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <span><i class="fas fa-list-alt fa-lg"></i></span> Tabla de contenidos
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- Right elements -->
             </div>
+        </nav>
+        <!-- Navbar -->
 
-            <!-- Single item -->
-            <div class="carousel-item">
-                <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(22).jpg" class="d-block w-100" alt="..." />
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Second slide label</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-            </div>
+        <!-- Carousel wrapper -->
+        <div style="margin-top: 50px;" id="carouselBasicExample" class="d-flex justify-content-center carousel slide carousel-fade" data-mdb-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-mdb-target="#carouselBasicExample" data-mdb-slide-to="0" class="active"></li>
+                <li data-mdb-target="#carouselBasicExample" data-mdb-slide-to="1"></li>
+                <li data-mdb-target="#carouselBasicExample" data-mdb-slide-to="2"></li>
+            </ol>
 
-            <!-- Single item -->
-            <div class="carousel-item">
-                <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(23).jpg" class="d-block w-100" alt="..." />
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Third slide label</h5>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                </div>
-            </div>
-        </div>
-        <!-- Inner -->
-
-        <!-- Controls -->
-        <a class="carousel-control-prev" href="#carouselBasicExample" role="button" data-mdb-slide="prev">
-            <span class="carousel-control-prev-icon text-dark" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselBasicExample" role="button" data-mdb-slide="next">
-            <span class="carousel-control-next-icon text-dark" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </a>
-    </div>
-    <!-- Carousel wrapper -->
-
-    <!-- <div id="catalogWrap">
-        <div class="tableWrap">
-            <div id="catalogueContainer">
-                <div id="catalogue" class="unselectable" style="transform: translateY(0px);">
-
-                    <div class="bookNavWrap" id="leftClickableBackground">
-
-                        <div class="navWrapper left tblNavBackward">
-                            <div class="smallNavBtn" id="navToFirst">
-                                <div class="backward gradient">
-                                    <svg class="o-icon o-icon--block o-icon--lg" xmlns="http://www.w3.org/2000/svg"
-                                        xmlns:xlink="http://www.w3.org/1999/xlink">
-                                        <use xlink:href="#svg-icon-first"></use>
-                                    </svg>
-                                </div>
-
-                            </div>
-                            <div class="largeNavBtn" id="navToPrev" style="height: 589px;">
-                                <div class="backward gradient" style="line-height: 589px;">
-                                    <svg class="o-icon o-icon--block o-icon--xxl" xmlns="http://www.w3.org/2000/svg"
-                                        xmlns:xlink="http://www.w3.org/1999/xlink">
-                                        <use xlink:href="#svg-icon-previous"></use>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-
+            <!-- Inner -->
+            <div style="width: 864px;" class="shadow-2-strong carousel-inner">
+                <!-- Single item -->
+                <div class="carousel-item active">
+                    <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg" class="d-block w-100" alt="..." />
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>First slide label</h5>
+                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                     </div>
+                </div>
 
-
-
-                    <div class="bookcell" style="width: 864px; height: 589px;">
-                        <div class="bookWrap unselectable" unselectable="on">
-                            <div class="book-page-shadow book-page-left-shadow is-visible"
-                                style="position: absolute; width: 50%; height: 100%"></div>
-                            <div class="book-page-shadow book-page-right-shadow is-visible"
-                                style="position: absolute; width: 50%; height: 100%; right: 0"></div>
-
-                            <div class="unselectable done" id="book">
-
-
-                                <div class="panel"
-                                    style="width: 4320px; transition: none 0s ease 0s; transform: translate(-1728px, 0px);">
-                                    <div id="spread-1"
-                                        class="pw book-spread child-count-2 spread-offset-right-69 is-zoomable"
-                                        data-spreadnumber="1">
-                                        <div class="linkbox spread-elements" data-id="1">
-
-                                            <div id="img_1" class="pageimage spread-offset-1">
-                                                <img data-pagenumber="2" class="book-page loaded"
-                                                    src="https://cdn.ipaper.io/iPaper/Papers/7084901d-0b49-4300-98b6-f779b912928b/Pages/2/Zoom.jpg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uaXBhcGVyLmlvL2lQYXBlci9QYXBlcnMvNzA4NDkwMWQtMGI0OS00MzAwLTk4YjYtZjc3OWI5MTI5MjhiL1BhZ2VzLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2MTE4MTIyMDV9fX1dfQ__&amp;Signature=FoVwVOm24Ra0oqHg0wAuiYAIBkUM4vtGXOTne~Nxkg50TvZVVC2zzW4SoJbTB7tqCu~o8wNQCJQNcByxO6WxbF7bBXrnLsYuBXC6B5PmruoHqqN4Ue6xRC8rrXR0VsSUOITDCI8WKVPnq~ryTFFp5UfHT8esLficuvI8vMHBPwQ_&amp;Key-Pair-Id=APKAIPGQN6BDBMBZ2LCA">
-                                            </div>
-                                            <div id="img_2" class="pageimage spread-offset-2">
-                                                <img data-pagenumber="3" class="book-page loaded"
-                                                    src="https://cdn.ipaper.io/iPaper/Papers/7084901d-0b49-4300-98b6-f779b912928b/Pages/3/Zoom.jpg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uaXBhcGVyLmlvL2lQYXBlci9QYXBlcnMvNzA4NDkwMWQtMGI0OS00MzAwLTk4YjYtZjc3OWI5MTI5MjhiL1BhZ2VzLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2MTE4MTIyMDV9fX1dfQ__&amp;Signature=FoVwVOm24Ra0oqHg0wAuiYAIBkUM4vtGXOTne~Nxkg50TvZVVC2zzW4SoJbTB7tqCu~o8wNQCJQNcByxO6WxbF7bBXrnLsYuBXC6B5PmruoHqqN4Ue6xRC8rrXR0VsSUOITDCI8WKVPnq~ryTFFp5UfHT8esLficuvI8vMHBPwQ_&amp;Key-Pair-Id=APKAIPGQN6BDBMBZ2LCA">
-                                            </div>
-
-                                            <div class="o-highlight">
-                                                <div data-pagenumber="2" class="o-highlight__panel"></div>
-                                                <div data-pagenumber="3" class="o-highlight__panel"></div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div id="spread-2"
-                                        class="pw book-spread child-count-2 spread-offset-right-68 is-zoomable"
-                                        data-spreadnumber="2">
-                                        <div class="linkbox spread-elements" data-id="3" data-dom-cache-id="4">
-
-                                            <div id="img_3" class="pageimage spread-offset-1">
-                                                <img data-pagenumber="4" class="book-page loaded"
-                                                    src="https://cdn.ipaper.io/iPaper/Papers/7084901d-0b49-4300-98b6-f779b912928b/Pages/4/Zoom.jpg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uaXBhcGVyLmlvL2lQYXBlci9QYXBlcnMvNzA4NDkwMWQtMGI0OS00MzAwLTk4YjYtZjc3OWI5MTI5MjhiL1BhZ2VzLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2MTE4MTIyMDV9fX1dfQ__&amp;Signature=FoVwVOm24Ra0oqHg0wAuiYAIBkUM4vtGXOTne~Nxkg50TvZVVC2zzW4SoJbTB7tqCu~o8wNQCJQNcByxO6WxbF7bBXrnLsYuBXC6B5PmruoHqqN4Ue6xRC8rrXR0VsSUOITDCI8WKVPnq~ryTFFp5UfHT8esLficuvI8vMHBPwQ_&amp;Key-Pair-Id=APKAIPGQN6BDBMBZ2LCA">
-                                            </div>
-                                            <div id="img_4" class="pageimage spread-offset-2">
-                                                <img data-pagenumber="5" class="book-page loaded"
-                                                    src="https://cdn.ipaper.io/iPaper/Papers/7084901d-0b49-4300-98b6-f779b912928b/Pages/5/Zoom.jpg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uaXBhcGVyLmlvL2lQYXBlci9QYXBlcnMvNzA4NDkwMWQtMGI0OS00MzAwLTk4YjYtZjc3OWI5MTI5MjhiL1BhZ2VzLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2MTE4MTIyMDV9fX1dfQ__&amp;Signature=FoVwVOm24Ra0oqHg0wAuiYAIBkUM4vtGXOTne~Nxkg50TvZVVC2zzW4SoJbTB7tqCu~o8wNQCJQNcByxO6WxbF7bBXrnLsYuBXC6B5PmruoHqqN4Ue6xRC8rrXR0VsSUOITDCI8WKVPnq~ryTFFp5UfHT8esLficuvI8vMHBPwQ_&amp;Key-Pair-Id=APKAIPGQN6BDBMBZ2LCA">
-                                            </div>
-
-                                            <div class="o-highlight">
-                                                <div data-pagenumber="4" class="o-highlight__panel"></div>
-                                                <div data-pagenumber="5" class="o-highlight__panel"></div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div id="spread-3"
-                                        class="pw book-spread child-count-2 spread-offset-right-67 is-zoomable is-active"
-                                        data-spreadnumber="3" style="transition: transform 0.3s ease-out 0s;">
-                                        <div class="linkbox spread-elements" data-id="5" data-dom-cache-id="5">
-                                            <div class="pagelink linktooltip book-pageelement book-pageelement--shopitem"
-                                                id="enrichment_430005017" data-pageelement-id="430005017"
-                                                style="width: 3%; height: 4.4%; left: 83.5%; top: 29.9%; z-index: 15998; display: block;"
-                                                data-name="">
-                                                <div class="pagelink-content"
-                                                    style="opacity: 1; background-color: transparent; border-color: rgb(0, 0, 0); border-width: 0px; transition: transform 750ms linear 0s; display: block; --transform-scale:1; --transform-translate-x:0px; --transform-translate-y:0px; transform: scale(var(--transform-scale));">
-                                                    <img style="width: 100%; height: 100%"
-                                                        class="pagelink-content__image"
-                                                        src="https://cdn.ipaper.io/iPaper/Files/5cf464e2-10c9-4d4d-963b-b4d89dff6fbb.svg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uaXBhcGVyLmlvL2lQYXBlci9GaWxlcy8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNjQzMjYxODA1fX19XX0_&amp;Signature=V1iFD3wztu0gHg2kt1jFhFzrPCinuo~vjrYK1EgjbxOo~r7mAxbNdjYkjj4Wn2OSPkbbyhLcFzZEA6jQHgIb1o3n5HPbvYxC9IkmhrrXhSFA3LLsXbi86M5alPTYnSN9DWhZYv0XsCoLIqOAFA2qDmzvURgzdOvpCR1TTB1LdXE_&amp;Key-Pair-Id=APKAIPGQN6BDBMBZ2LCA"
-                                                        data-original-src="https://cdn.ipaper.io/iPaper/Files/5cf464e2-10c9-4d4d-963b-b4d89dff6fbb.svg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uaXBhcGVyLmlvL2lQYXBlci9GaWxlcy8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNjQzMjYxODA1fX19XX0_&amp;Signature=V1iFD3wztu0gHg2kt1jFhFzrPCinuo~vjrYK1EgjbxOo~r7mAxbNdjYkjj4Wn2OSPkbbyhLcFzZEA6jQHgIb1o3n5HPbvYxC9IkmhrrXhSFA3LLsXbi86M5alPTYnSN9DWhZYv0XsCoLIqOAFA2qDmzvURgzdOvpCR1TTB1LdXE_&amp;Key-Pair-Id=APKAIPGQN6BDBMBZ2LCA"
-                                                        data-alternative-src="/natura-cosmeticos-sa/mx/2021/02/es-mx/revista/ciclo-02-wpmx/ViewFile816119.ashx">
-                                                </div>
-                                            </div>
-                                            <div class="pagelink linktooltip book-pageelement book-pageelement--shopitem"
-                                                id="enrichment_430005016" data-pageelement-id="430005016"
-                                                style="width: 3%; height: 4.4%; left: 6.75%; top: 29.6%; z-index: 15999; display: block;"
-                                                data-name="">
-                                                <div class="pagelink-content"
-                                                    style="opacity: 1; background-color: transparent; border-color: rgb(0, 0, 0); border-width: 0px; transition: transform 750ms linear 0s; display: block; --transform-scale:1.25; --transform-translate-x:0px; --transform-translate-y:0px; transform: scale(var(--transform-scale));">
-                                                    <img style="width: 100%; height: 100%"
-                                                        class="pagelink-content__image"
-                                                        src="https://cdn.ipaper.io/iPaper/Files/5cf464e2-10c9-4d4d-963b-b4d89dff6fbb.svg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uaXBhcGVyLmlvL2lQYXBlci9GaWxlcy8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNjQzMjYxODA1fX19XX0_&amp;Signature=V1iFD3wztu0gHg2kt1jFhFzrPCinuo~vjrYK1EgjbxOo~r7mAxbNdjYkjj4Wn2OSPkbbyhLcFzZEA6jQHgIb1o3n5HPbvYxC9IkmhrrXhSFA3LLsXbi86M5alPTYnSN9DWhZYv0XsCoLIqOAFA2qDmzvURgzdOvpCR1TTB1LdXE_&amp;Key-Pair-Id=APKAIPGQN6BDBMBZ2LCA"
-                                                        data-original-src="https://cdn.ipaper.io/iPaper/Files/5cf464e2-10c9-4d4d-963b-b4d89dff6fbb.svg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uaXBhcGVyLmlvL2lQYXBlci9GaWxlcy8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNjQzMjYxODA1fX19XX0_&amp;Signature=V1iFD3wztu0gHg2kt1jFhFzrPCinuo~vjrYK1EgjbxOo~r7mAxbNdjYkjj4Wn2OSPkbbyhLcFzZEA6jQHgIb1o3n5HPbvYxC9IkmhrrXhSFA3LLsXbi86M5alPTYnSN9DWhZYv0XsCoLIqOAFA2qDmzvURgzdOvpCR1TTB1LdXE_&amp;Key-Pair-Id=APKAIPGQN6BDBMBZ2LCA"
-                                                        data-alternative-src="/natura-cosmeticos-sa/mx/2021/02/es-mx/revista/ciclo-02-wpmx/ViewFile816119.ashx">
-                                                </div>
-                                            </div>
-
-                                            <div id="img_5" class="pageimage spread-offset-1">
-                                                <img data-pagenumber="6" class="book-page loaded"
-                                                    src="https://cdn.ipaper.io/iPaper/Papers/7084901d-0b49-4300-98b6-f779b912928b/Pages/6/Zoom.jpg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uaXBhcGVyLmlvL2lQYXBlci9QYXBlcnMvNzA4NDkwMWQtMGI0OS00MzAwLTk4YjYtZjc3OWI5MTI5MjhiL1BhZ2VzLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2MTE4MTIyMDV9fX1dfQ__&amp;Signature=FoVwVOm24Ra0oqHg0wAuiYAIBkUM4vtGXOTne~Nxkg50TvZVVC2zzW4SoJbTB7tqCu~o8wNQCJQNcByxO6WxbF7bBXrnLsYuBXC6B5PmruoHqqN4Ue6xRC8rrXR0VsSUOITDCI8WKVPnq~ryTFFp5UfHT8esLficuvI8vMHBPwQ_&amp;Key-Pair-Id=APKAIPGQN6BDBMBZ2LCA">
-                                            </div>
-                                            <div id="img_6" class="pageimage spread-offset-2">
-                                                <img data-pagenumber="7" class="book-page loaded"
-                                                    src="https://cdn.ipaper.io/iPaper/Papers/7084901d-0b49-4300-98b6-f779b912928b/Pages/7/Zoom.jpg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uaXBhcGVyLmlvL2lQYXBlci9QYXBlcnMvNzA4NDkwMWQtMGI0OS00MzAwLTk4YjYtZjc3OWI5MTI5MjhiL1BhZ2VzLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2MTE4MTIyMDV9fX1dfQ__&amp;Signature=FoVwVOm24Ra0oqHg0wAuiYAIBkUM4vtGXOTne~Nxkg50TvZVVC2zzW4SoJbTB7tqCu~o8wNQCJQNcByxO6WxbF7bBXrnLsYuBXC6B5PmruoHqqN4Ue6xRC8rrXR0VsSUOITDCI8WKVPnq~ryTFFp5UfHT8esLficuvI8vMHBPwQ_&amp;Key-Pair-Id=APKAIPGQN6BDBMBZ2LCA">
-                                            </div>
-
-                                            <div class="o-highlight">
-                                                <div data-pagenumber="6" class="o-highlight__panel"></div>
-                                                <div data-pagenumber="7" class="o-highlight__panel"></div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div id="spread-4"
-                                        class="pw book-spread child-count-2 spread-offset-right-66 is-zoomable"
-                                        data-spreadnumber="4">
-                                        <div class="linkbox spread-elements" data-id="7" data-dom-cache-id="6">
-                                            <div class="pagelink linktooltip book-pageelement book-pageelement--shopitem"
-                                                id="enrichment_430005018" data-pageelement-id="430005018"
-                                                style="width: 3%; height: 4.4%; left: 58.9%; top: 72.8%; z-index: 15999; display: block;"
-                                                data-name="">
-                                                <div class="pagelink-content"
-                                                    style="opacity: 1; background-color: transparent; border-color: rgb(0, 0, 0); border-width: 0px; transition: transform 750ms linear 0s; display: block; --transform-scale:1; --transform-translate-x:0px; --transform-translate-y:0px; transform: scale(var(--transform-scale));">
-                                                    <img style="width: 100%; height: 100%"
-                                                        class="pagelink-content__image"
-                                                        src="https://cdn.ipaper.io/iPaper/Files/5cf464e2-10c9-4d4d-963b-b4d89dff6fbb.svg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uaXBhcGVyLmlvL2lQYXBlci9GaWxlcy8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNjQzMjYxODA1fX19XX0_&amp;Signature=V1iFD3wztu0gHg2kt1jFhFzrPCinuo~vjrYK1EgjbxOo~r7mAxbNdjYkjj4Wn2OSPkbbyhLcFzZEA6jQHgIb1o3n5HPbvYxC9IkmhrrXhSFA3LLsXbi86M5alPTYnSN9DWhZYv0XsCoLIqOAFA2qDmzvURgzdOvpCR1TTB1LdXE_&amp;Key-Pair-Id=APKAIPGQN6BDBMBZ2LCA"
-                                                        data-original-src="https://cdn.ipaper.io/iPaper/Files/5cf464e2-10c9-4d4d-963b-b4d89dff6fbb.svg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uaXBhcGVyLmlvL2lQYXBlci9GaWxlcy8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNjQzMjYxODA1fX19XX0_&amp;Signature=V1iFD3wztu0gHg2kt1jFhFzrPCinuo~vjrYK1EgjbxOo~r7mAxbNdjYkjj4Wn2OSPkbbyhLcFzZEA6jQHgIb1o3n5HPbvYxC9IkmhrrXhSFA3LLsXbi86M5alPTYnSN9DWhZYv0XsCoLIqOAFA2qDmzvURgzdOvpCR1TTB1LdXE_&amp;Key-Pair-Id=APKAIPGQN6BDBMBZ2LCA"
-                                                        data-alternative-src="/natura-cosmeticos-sa/mx/2021/02/es-mx/revista/ciclo-02-wpmx/ViewFile816119.ashx">
-                                                </div>
-                                            </div>
-
-                                            <div id="img_7" class="pageimage spread-offset-1">
-                                                <img data-pagenumber="8" class="book-page loaded"
-                                                    src="https://cdn.ipaper.io/iPaper/Papers/7084901d-0b49-4300-98b6-f779b912928b/Pages/8/Zoom.jpg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uaXBhcGVyLmlvL2lQYXBlci9QYXBlcnMvNzA4NDkwMWQtMGI0OS00MzAwLTk4YjYtZjc3OWI5MTI5MjhiL1BhZ2VzLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2MTE4MTIyMDV9fX1dfQ__&amp;Signature=FoVwVOm24Ra0oqHg0wAuiYAIBkUM4vtGXOTne~Nxkg50TvZVVC2zzW4SoJbTB7tqCu~o8wNQCJQNcByxO6WxbF7bBXrnLsYuBXC6B5PmruoHqqN4Ue6xRC8rrXR0VsSUOITDCI8WKVPnq~ryTFFp5UfHT8esLficuvI8vMHBPwQ_&amp;Key-Pair-Id=APKAIPGQN6BDBMBZ2LCA">
-                                            </div>
-                                            <div id="img_8" class="pageimage spread-offset-2">
-                                                <img data-pagenumber="9" class="book-page loaded"
-                                                    src="https://cdn.ipaper.io/iPaper/Papers/7084901d-0b49-4300-98b6-f779b912928b/Pages/9/Zoom.jpg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uaXBhcGVyLmlvL2lQYXBlci9QYXBlcnMvNzA4NDkwMWQtMGI0OS00MzAwLTk4YjYtZjc3OWI5MTI5MjhiL1BhZ2VzLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2MTE4MTIyMDV9fX1dfQ__&amp;Signature=FoVwVOm24Ra0oqHg0wAuiYAIBkUM4vtGXOTne~Nxkg50TvZVVC2zzW4SoJbTB7tqCu~o8wNQCJQNcByxO6WxbF7bBXrnLsYuBXC6B5PmruoHqqN4Ue6xRC8rrXR0VsSUOITDCI8WKVPnq~ryTFFp5UfHT8esLficuvI8vMHBPwQ_&amp;Key-Pair-Id=APKAIPGQN6BDBMBZ2LCA">
-                                            </div>
-
-                                            <div class="o-highlight">
-                                                <div data-pagenumber="8" class="o-highlight__panel"></div>
-                                                <div data-pagenumber="9" class="o-highlight__panel"></div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div id="spread-5"
-                                        class="pw book-spread child-count-2 spread-offset-right-65 is-zoomable"
-                                        data-spreadnumber="5">
-                                        <div class="linkbox spread-elements" data-id="9" data-dom-cache-id="7">
-                                            <div class="pagelink linktooltip book-pageelement book-pageelement--shopitem"
-                                                id="enrichment_430005020" data-pageelement-id="430005020"
-                                                style="width: 3%; height: 4.4%; left: 59%; top: 72.6%; z-index: 15998; display: block;">
-                                                <div class="pagelink-content"
-                                                    style="opacity: 1; background-color: transparent; border-color: rgb(0, 0, 0); border-width: 0px; transition: none 0s ease 0s; display: block; --transform-scale:1; --transform-translate-x:0px; --transform-translate-y:0px;">
-                                                    <img style="width: 100%; height: 100%"
-                                                        class="pagelink-content__image"
-                                                        src="https://cdn.ipaper.io/iPaper/Files/5cf464e2-10c9-4d4d-963b-b4d89dff6fbb.svg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uaXBhcGVyLmlvL2lQYXBlci9GaWxlcy8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNjQzMjYxODA1fX19XX0_&amp;Signature=V1iFD3wztu0gHg2kt1jFhFzrPCinuo~vjrYK1EgjbxOo~r7mAxbNdjYkjj4Wn2OSPkbbyhLcFzZEA6jQHgIb1o3n5HPbvYxC9IkmhrrXhSFA3LLsXbi86M5alPTYnSN9DWhZYv0XsCoLIqOAFA2qDmzvURgzdOvpCR1TTB1LdXE_&amp;Key-Pair-Id=APKAIPGQN6BDBMBZ2LCA"
-                                                        data-original-src="https://cdn.ipaper.io/iPaper/Files/5cf464e2-10c9-4d4d-963b-b4d89dff6fbb.svg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uaXBhcGVyLmlvL2lQYXBlci9GaWxlcy8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNjQzMjYxODA1fX19XX0_&amp;Signature=V1iFD3wztu0gHg2kt1jFhFzrPCinuo~vjrYK1EgjbxOo~r7mAxbNdjYkjj4Wn2OSPkbbyhLcFzZEA6jQHgIb1o3n5HPbvYxC9IkmhrrXhSFA3LLsXbi86M5alPTYnSN9DWhZYv0XsCoLIqOAFA2qDmzvURgzdOvpCR1TTB1LdXE_&amp;Key-Pair-Id=APKAIPGQN6BDBMBZ2LCA"
-                                                        data-alternative-src="/natura-cosmeticos-sa/mx/2021/02/es-mx/revista/ciclo-02-wpmx/ViewFile816119.ashx">
-                                                </div>
-                                            </div>
-                                            <div class="pagelink linktooltip book-pageelement book-pageelement--shopitem"
-                                                id="enrichment_430005019" data-pageelement-id="430005019"
-                                                style="width: 3%; height: 4.4%; left: 9.05%; top: 72.4%; z-index: 15999; display: block;">
-                                                <div class="pagelink-content"
-                                                    style="opacity: 1; background-color: transparent; border-color: rgb(0, 0, 0); border-width: 0px; transition: none 0s ease 0s; display: block; --transform-scale:1; --transform-translate-x:0px; --transform-translate-y:0px;">
-                                                    <img style="width: 100%; height: 100%"
-                                                        class="pagelink-content__image"
-                                                        src="https://cdn.ipaper.io/iPaper/Files/5cf464e2-10c9-4d4d-963b-b4d89dff6fbb.svg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uaXBhcGVyLmlvL2lQYXBlci9GaWxlcy8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNjQzMjYxODA1fX19XX0_&amp;Signature=V1iFD3wztu0gHg2kt1jFhFzrPCinuo~vjrYK1EgjbxOo~r7mAxbNdjYkjj4Wn2OSPkbbyhLcFzZEA6jQHgIb1o3n5HPbvYxC9IkmhrrXhSFA3LLsXbi86M5alPTYnSN9DWhZYv0XsCoLIqOAFA2qDmzvURgzdOvpCR1TTB1LdXE_&amp;Key-Pair-Id=APKAIPGQN6BDBMBZ2LCA"
-                                                        data-original-src="https://cdn.ipaper.io/iPaper/Files/5cf464e2-10c9-4d4d-963b-b4d89dff6fbb.svg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uaXBhcGVyLmlvL2lQYXBlci9GaWxlcy8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNjQzMjYxODA1fX19XX0_&amp;Signature=V1iFD3wztu0gHg2kt1jFhFzrPCinuo~vjrYK1EgjbxOo~r7mAxbNdjYkjj4Wn2OSPkbbyhLcFzZEA6jQHgIb1o3n5HPbvYxC9IkmhrrXhSFA3LLsXbi86M5alPTYnSN9DWhZYv0XsCoLIqOAFA2qDmzvURgzdOvpCR1TTB1LdXE_&amp;Key-Pair-Id=APKAIPGQN6BDBMBZ2LCA"
-                                                        data-alternative-src="/natura-cosmeticos-sa/mx/2021/02/es-mx/revista/ciclo-02-wpmx/ViewFile816119.ashx">
-                                                </div>
-                                            </div>
-
-                                            <div id="img_9" class="pageimage spread-offset-1">
-                                                <img data-pagenumber="10" class="book-page loaded"
-                                                    src="https://cdn.ipaper.io/iPaper/Papers/7084901d-0b49-4300-98b6-f779b912928b/Pages/10/Zoom.jpg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uaXBhcGVyLmlvL2lQYXBlci9QYXBlcnMvNzA4NDkwMWQtMGI0OS00MzAwLTk4YjYtZjc3OWI5MTI5MjhiL1BhZ2VzLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2MTE4MTIyMDV9fX1dfQ__&amp;Signature=FoVwVOm24Ra0oqHg0wAuiYAIBkUM4vtGXOTne~Nxkg50TvZVVC2zzW4SoJbTB7tqCu~o8wNQCJQNcByxO6WxbF7bBXrnLsYuBXC6B5PmruoHqqN4Ue6xRC8rrXR0VsSUOITDCI8WKVPnq~ryTFFp5UfHT8esLficuvI8vMHBPwQ_&amp;Key-Pair-Id=APKAIPGQN6BDBMBZ2LCA">
-                                            </div>
-                                            <div id="img_10" class="pageimage spread-offset-2">
-                                                <img data-pagenumber="11" class="book-page loaded"
-                                                    src="https://cdn.ipaper.io/iPaper/Papers/7084901d-0b49-4300-98b6-f779b912928b/Pages/11/Zoom.jpg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uaXBhcGVyLmlvL2lQYXBlci9QYXBlcnMvNzA4NDkwMWQtMGI0OS00MzAwLTk4YjYtZjc3OWI5MTI5MjhiL1BhZ2VzLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2MTE4MTIyMDV9fX1dfQ__&amp;Signature=FoVwVOm24Ra0oqHg0wAuiYAIBkUM4vtGXOTne~Nxkg50TvZVVC2zzW4SoJbTB7tqCu~o8wNQCJQNcByxO6WxbF7bBXrnLsYuBXC6B5PmruoHqqN4Ue6xRC8rrXR0VsSUOITDCI8WKVPnq~ryTFFp5UfHT8esLficuvI8vMHBPwQ_&amp;Key-Pair-Id=APKAIPGQN6BDBMBZ2LCA">
-                                            </div>
-
-                                            <div class="o-highlight">
-                                                <div data-pagenumber="10" class="o-highlight__panel"></div>
-                                                <div data-pagenumber="11" class="o-highlight__panel"></div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div>
+                <!-- Single item -->
+                <div class="carousel-item">
+                    <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(22).jpg" class="d-block w-100" alt="..." />
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Second slide label</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </div>
+                </div>
 
-
-                    <div class="bookNavWrap" id="rightClickableBackground">
-
-                        <div class="navWrapper right tblNavForward" style="">
-                            <div class="smallNavBtn" id="navToLast">
-                                <div class="forward gradient">
-                                    <svg class="o-icon o-icon--block o-icon--lg" xmlns="http://www.w3.org/2000/svg"
-                                        xmlns:xlink="http://www.w3.org/1999/xlink">
-                                        <use xlink:href="#svg-icon-last"></use>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="largeNavBtn" id="navToNext" style="height: 589px;">
-                                <div class="forward gradient" style="line-height: 589px;">
-                                    <svg class="o-icon o-icon--block o-icon--xxl" xmlns="http://www.w3.org/2000/svg"
-                                        xmlns:xlink="http://www.w3.org/1999/xlink">
-                                        <use xlink:href="#svg-icon-next"></use>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-
+                <!-- Single item -->
+                <div class="carousel-item">
+                    <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(23).jpg" class="d-block w-100" alt="..." />
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Third slide label</h5>
+                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </div> -->
+            <!-- Inner -->
 
-    <!-- MDB -->
-    <script type="text/javascript" src="https://omeollin.github.io/FerreteriaCuautitlan/MDB5/js/mdb.min.js"></script>
-</body>
+            <!-- Controls -->
+            <a class="carousel-control-prev" href="#carouselBasicExample" role="button" data-mdb-slide="prev">
+                <span class="carousel-control-prev-icon text-dark" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselBasicExample" role="button" data-mdb-slide="next">
+                <span class="carousel-control-next-icon text-dark" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </a>
+        </div>
+        <!-- Carousel wrapper -->
+
+        <!-- <div id="catalogWrap">
+            <div class="tableWrap">
+                <div id="catalogueContainer">
+                    <div id="catalogue" class="unselectable" style="transform: translateY(0px);">
+
+                        <div class="bookNavWrap" id="leftClickableBackground">
+
+                            <div class="navWrapper left tblNavBackward">
+                                <div class="smallNavBtn" id="navToFirst">
+                                    <div class="backward gradient">
+                                        <svg class="o-icon o-icon--block o-icon--lg" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                                            <use xlink:href="#svg-icon-first"></use>
+                                        </svg>
+                                    </div>
+
+                                </div>
+                                <div class="largeNavBtn" id="navToPrev" style="height: 589px;">
+                                    <div class="backward gradient" style="line-height: 589px;">
+                                        <svg class="o-icon o-icon--block o-icon--xxl" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                                            <use xlink:href="#svg-icon-previous"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="bookcell" style="width: 864px; height: 589px;">
+                            <div class="bookWrap unselectable" unselectable="on">
+                                <div class="book-page-shadow book-page-left-shadow is-visible"
+                                    style="position: absolute; width: 50%; height: 100%"></div>
+                                <div class="book-page-shadow book-page-right-shadow is-visible"
+                                    style="position: absolute; width: 50%; height: 100%; right: 0"></div>
+
+                                <div class="unselectable done" id="book">
+
+
+                                    <div class="panel"
+                                        style="width: 4320px; transition: none 0s ease 0s; transform: translate(-1728px, 0px);">
+                                        <div id="spread-1"
+                                            class="pw book-spread child-count-2 spread-offset-right-69 is-zoomable"
+                                            data-spreadnumber="1">
+                                            <div class="linkbox spread-elements" data-id="1">
+
+                                                <div id="img_1" class="pageimage spread-offset-1">
+                                                    <img data-pagenumber="2" class="book-page loaded"
+                                                        src="https://cdn.ipaper.io/iPaper/Papers/7084901d-0b49-4300-98b6-f779b912928b/Pages/2/Zoom.jpg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uaXBhcGVyLmlvL2lQYXBlci9QYXBlcnMvNzA4NDkwMWQtMGI0OS00MzAwLTk4YjYtZjc3OWI5MTI5MjhiL1BhZ2VzLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2MTE4MTIyMDV9fX1dfQ__&amp;Signature=FoVwVOm24Ra0oqHg0wAuiYAIBkUM4vtGXOTne~Nxkg50TvZVVC2zzW4SoJbTB7tqCu~o8wNQCJQNcByxO6WxbF7bBXrnLsYuBXC6B5PmruoHqqN4Ue6xRC8rrXR0VsSUOITDCI8WKVPnq~ryTFFp5UfHT8esLficuvI8vMHBPwQ_&amp;Key-Pair-Id=APKAIPGQN6BDBMBZ2LCA">
+                                                </div>
+                                                <div id="img_2" class="pageimage spread-offset-2">
+                                                    <img data-pagenumber="3" class="book-page loaded"
+                                                        src="https://cdn.ipaper.io/iPaper/Papers/7084901d-0b49-4300-98b6-f779b912928b/Pages/3/Zoom.jpg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uaXBhcGVyLmlvL2lQYXBlci9QYXBlcnMvNzA4NDkwMWQtMGI0OS00MzAwLTk4YjYtZjc3OWI5MTI5MjhiL1BhZ2VzLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2MTE4MTIyMDV9fX1dfQ__&amp;Signature=FoVwVOm24Ra0oqHg0wAuiYAIBkUM4vtGXOTne~Nxkg50TvZVVC2zzW4SoJbTB7tqCu~o8wNQCJQNcByxO6WxbF7bBXrnLsYuBXC6B5PmruoHqqN4Ue6xRC8rrXR0VsSUOITDCI8WKVPnq~ryTFFp5UfHT8esLficuvI8vMHBPwQ_&amp;Key-Pair-Id=APKAIPGQN6BDBMBZ2LCA">
+                                                </div>
+
+                                                <div class="o-highlight">
+                                                    <div data-pagenumber="2" class="o-highlight__panel"></div>
+                                                    <div data-pagenumber="3" class="o-highlight__panel"></div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div id="spread-2"
+                                            class="pw book-spread child-count-2 spread-offset-right-68 is-zoomable"
+                                            data-spreadnumber="2">
+                                            <div class="linkbox spread-elements" data-id="3" data-dom-cache-id="4">
+
+                                                <div id="img_3" class="pageimage spread-offset-1">
+                                                    <img data-pagenumber="4" class="book-page loaded"
+                                                        src="https://cdn.ipaper.io/iPaper/Papers/7084901d-0b49-4300-98b6-f779b912928b/Pages/4/Zoom.jpg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uaXBhcGVyLmlvL2lQYXBlci9QYXBlcnMvNzA4NDkwMWQtMGI0OS00MzAwLTk4YjYtZjc3OWI5MTI5MjhiL1BhZ2VzLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2MTE4MTIyMDV9fX1dfQ__&amp;Signature=FoVwVOm24Ra0oqHg0wAuiYAIBkUM4vtGXOTne~Nxkg50TvZVVC2zzW4SoJbTB7tqCu~o8wNQCJQNcByxO6WxbF7bBXrnLsYuBXC6B5PmruoHqqN4Ue6xRC8rrXR0VsSUOITDCI8WKVPnq~ryTFFp5UfHT8esLficuvI8vMHBPwQ_&amp;Key-Pair-Id=APKAIPGQN6BDBMBZ2LCA">
+                                                </div>
+                                                <div id="img_4" class="pageimage spread-offset-2">
+                                                    <img data-pagenumber="5" class="book-page loaded"
+                                                        src="https://cdn.ipaper.io/iPaper/Papers/7084901d-0b49-4300-98b6-f779b912928b/Pages/5/Zoom.jpg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uaXBhcGVyLmlvL2lQYXBlci9QYXBlcnMvNzA4NDkwMWQtMGI0OS00MzAwLTk4YjYtZjc3OWI5MTI5MjhiL1BhZ2VzLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2MTE4MTIyMDV9fX1dfQ__&amp;Signature=FoVwVOm24Ra0oqHg0wAuiYAIBkUM4vtGXOTne~Nxkg50TvZVVC2zzW4SoJbTB7tqCu~o8wNQCJQNcByxO6WxbF7bBXrnLsYuBXC6B5PmruoHqqN4Ue6xRC8rrXR0VsSUOITDCI8WKVPnq~ryTFFp5UfHT8esLficuvI8vMHBPwQ_&amp;Key-Pair-Id=APKAIPGQN6BDBMBZ2LCA">
+                                                </div>
+
+                                                <div class="o-highlight">
+                                                    <div data-pagenumber="4" class="o-highlight__panel"></div>
+                                                    <div data-pagenumber="5" class="o-highlight__panel"></div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div id="spread-3"
+                                            class="pw book-spread child-count-2 spread-offset-right-67 is-zoomable is-active"
+                                            data-spreadnumber="3" style="transition: transform 0.3s ease-out 0s;">
+                                            <div class="linkbox spread-elements" data-id="5" data-dom-cache-id="5">
+                                                <div class="pagelink linktooltip book-pageelement book-pageelement--shopitem"
+                                                    id="enrichment_430005017" data-pageelement-id="430005017"
+                                                    style="width: 3%; height: 4.4%; left: 83.5%; top: 29.9%; z-index: 15998; display: block;"
+                                                    data-name="">
+                                                    <div class="pagelink-content"
+                                                        style="opacity: 1; background-color: transparent; border-color: rgb(0, 0, 0); border-width: 0px; transition: transform 750ms linear 0s; display: block; --transform-scale:1; --transform-translate-x:0px; --transform-translate-y:0px; transform: scale(var(--transform-scale));">
+                                                        <img style="width: 100%; height: 100%"
+                                                            class="pagelink-content__image"
+                                                            src="https://cdn.ipaper.io/iPaper/Files/5cf464e2-10c9-4d4d-963b-b4d89dff6fbb.svg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uaXBhcGVyLmlvL2lQYXBlci9GaWxlcy8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNjQzMjYxODA1fX19XX0_&amp;Signature=V1iFD3wztu0gHg2kt1jFhFzrPCinuo~vjrYK1EgjbxOo~r7mAxbNdjYkjj4Wn2OSPkbbyhLcFzZEA6jQHgIb1o3n5HPbvYxC9IkmhrrXhSFA3LLsXbi86M5alPTYnSN9DWhZYv0XsCoLIqOAFA2qDmzvURgzdOvpCR1TTB1LdXE_&amp;Key-Pair-Id=APKAIPGQN6BDBMBZ2LCA"
+                                                            data-original-src="https://cdn.ipaper.io/iPaper/Files/5cf464e2-10c9-4d4d-963b-b4d89dff6fbb.svg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uaXBhcGVyLmlvL2lQYXBlci9GaWxlcy8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNjQzMjYxODA1fX19XX0_&amp;Signature=V1iFD3wztu0gHg2kt1jFhFzrPCinuo~vjrYK1EgjbxOo~r7mAxbNdjYkjj4Wn2OSPkbbyhLcFzZEA6jQHgIb1o3n5HPbvYxC9IkmhrrXhSFA3LLsXbi86M5alPTYnSN9DWhZYv0XsCoLIqOAFA2qDmzvURgzdOvpCR1TTB1LdXE_&amp;Key-Pair-Id=APKAIPGQN6BDBMBZ2LCA"
+                                                            data-alternative-src="/natura-cosmeticos-sa/mx/2021/02/es-mx/revista/ciclo-02-wpmx/ViewFile816119.ashx">
+                                                    </div>
+                                                </div>
+                                                <div class="pagelink linktooltip book-pageelement book-pageelement--shopitem"
+                                                    id="enrichment_430005016" data-pageelement-id="430005016"
+                                                    style="width: 3%; height: 4.4%; left: 6.75%; top: 29.6%; z-index: 15999; display: block;"
+                                                    data-name="">
+                                                    <div class="pagelink-content"
+                                                        style="opacity: 1; background-color: transparent; border-color: rgb(0, 0, 0); border-width: 0px; transition: transform 750ms linear 0s; display: block; --transform-scale:1.25; --transform-translate-x:0px; --transform-translate-y:0px; transform: scale(var(--transform-scale));">
+                                                        <img style="width: 100%; height: 100%"
+                                                            class="pagelink-content__image"
+                                                            src="https://cdn.ipaper.io/iPaper/Files/5cf464e2-10c9-4d4d-963b-b4d89dff6fbb.svg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uaXBhcGVyLmlvL2lQYXBlci9GaWxlcy8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNjQzMjYxODA1fX19XX0_&amp;Signature=V1iFD3wztu0gHg2kt1jFhFzrPCinuo~vjrYK1EgjbxOo~r7mAxbNdjYkjj4Wn2OSPkbbyhLcFzZEA6jQHgIb1o3n5HPbvYxC9IkmhrrXhSFA3LLsXbi86M5alPTYnSN9DWhZYv0XsCoLIqOAFA2qDmzvURgzdOvpCR1TTB1LdXE_&amp;Key-Pair-Id=APKAIPGQN6BDBMBZ2LCA"
+                                                            data-original-src="https://cdn.ipaper.io/iPaper/Files/5cf464e2-10c9-4d4d-963b-b4d89dff6fbb.svg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uaXBhcGVyLmlvL2lQYXBlci9GaWxlcy8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNjQzMjYxODA1fX19XX0_&amp;Signature=V1iFD3wztu0gHg2kt1jFhFzrPCinuo~vjrYK1EgjbxOo~r7mAxbNdjYkjj4Wn2OSPkbbyhLcFzZEA6jQHgIb1o3n5HPbvYxC9IkmhrrXhSFA3LLsXbi86M5alPTYnSN9DWhZYv0XsCoLIqOAFA2qDmzvURgzdOvpCR1TTB1LdXE_&amp;Key-Pair-Id=APKAIPGQN6BDBMBZ2LCA"
+                                                            data-alternative-src="/natura-cosmeticos-sa/mx/2021/02/es-mx/revista/ciclo-02-wpmx/ViewFile816119.ashx">
+                                                    </div>
+                                                </div>
+
+                                                <div id="img_5" class="pageimage spread-offset-1">
+                                                    <img data-pagenumber="6" class="book-page loaded"
+                                                        src="https://cdn.ipaper.io/iPaper/Papers/7084901d-0b49-4300-98b6-f779b912928b/Pages/6/Zoom.jpg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uaXBhcGVyLmlvL2lQYXBlci9QYXBlcnMvNzA4NDkwMWQtMGI0OS00MzAwLTk4YjYtZjc3OWI5MTI5MjhiL1BhZ2VzLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2MTE4MTIyMDV9fX1dfQ__&amp;Signature=FoVwVOm24Ra0oqHg0wAuiYAIBkUM4vtGXOTne~Nxkg50TvZVVC2zzW4SoJbTB7tqCu~o8wNQCJQNcByxO6WxbF7bBXrnLsYuBXC6B5PmruoHqqN4Ue6xRC8rrXR0VsSUOITDCI8WKVPnq~ryTFFp5UfHT8esLficuvI8vMHBPwQ_&amp;Key-Pair-Id=APKAIPGQN6BDBMBZ2LCA">
+                                                </div>
+                                                <div id="img_6" class="pageimage spread-offset-2">
+                                                    <img data-pagenumber="7" class="book-page loaded"
+                                                        src="https://cdn.ipaper.io/iPaper/Papers/7084901d-0b49-4300-98b6-f779b912928b/Pages/7/Zoom.jpg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uaXBhcGVyLmlvL2lQYXBlci9QYXBlcnMvNzA4NDkwMWQtMGI0OS00MzAwLTk4YjYtZjc3OWI5MTI5MjhiL1BhZ2VzLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2MTE4MTIyMDV9fX1dfQ__&amp;Signature=FoVwVOm24Ra0oqHg0wAuiYAIBkUM4vtGXOTne~Nxkg50TvZVVC2zzW4SoJbTB7tqCu~o8wNQCJQNcByxO6WxbF7bBXrnLsYuBXC6B5PmruoHqqN4Ue6xRC8rrXR0VsSUOITDCI8WKVPnq~ryTFFp5UfHT8esLficuvI8vMHBPwQ_&amp;Key-Pair-Id=APKAIPGQN6BDBMBZ2LCA">
+                                                </div>
+
+                                                <div class="o-highlight">
+                                                    <div data-pagenumber="6" class="o-highlight__panel"></div>
+                                                    <div data-pagenumber="7" class="o-highlight__panel"></div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div id="spread-4"
+                                            class="pw book-spread child-count-2 spread-offset-right-66 is-zoomable"
+                                            data-spreadnumber="4">
+                                            <div class="linkbox spread-elements" data-id="7" data-dom-cache-id="6">
+                                                <div class="pagelink linktooltip book-pageelement book-pageelement--shopitem"
+                                                    id="enrichment_430005018" data-pageelement-id="430005018"
+                                                    style="width: 3%; height: 4.4%; left: 58.9%; top: 72.8%; z-index: 15999; display: block;"
+                                                    data-name="">
+                                                    <div class="pagelink-content"
+                                                        style="opacity: 1; background-color: transparent; border-color: rgb(0, 0, 0); border-width: 0px; transition: transform 750ms linear 0s; display: block; --transform-scale:1; --transform-translate-x:0px; --transform-translate-y:0px; transform: scale(var(--transform-scale));">
+                                                        <img style="width: 100%; height: 100%"
+                                                            class="pagelink-content__image"
+                                                            src="https://cdn.ipaper.io/iPaper/Files/5cf464e2-10c9-4d4d-963b-b4d89dff6fbb.svg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uaXBhcGVyLmlvL2lQYXBlci9GaWxlcy8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNjQzMjYxODA1fX19XX0_&amp;Signature=V1iFD3wztu0gHg2kt1jFhFzrPCinuo~vjrYK1EgjbxOo~r7mAxbNdjYkjj4Wn2OSPkbbyhLcFzZEA6jQHgIb1o3n5HPbvYxC9IkmhrrXhSFA3LLsXbi86M5alPTYnSN9DWhZYv0XsCoLIqOAFA2qDmzvURgzdOvpCR1TTB1LdXE_&amp;Key-Pair-Id=APKAIPGQN6BDBMBZ2LCA"
+                                                            data-original-src="https://cdn.ipaper.io/iPaper/Files/5cf464e2-10c9-4d4d-963b-b4d89dff6fbb.svg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uaXBhcGVyLmlvL2lQYXBlci9GaWxlcy8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNjQzMjYxODA1fX19XX0_&amp;Signature=V1iFD3wztu0gHg2kt1jFhFzrPCinuo~vjrYK1EgjbxOo~r7mAxbNdjYkjj4Wn2OSPkbbyhLcFzZEA6jQHgIb1o3n5HPbvYxC9IkmhrrXhSFA3LLsXbi86M5alPTYnSN9DWhZYv0XsCoLIqOAFA2qDmzvURgzdOvpCR1TTB1LdXE_&amp;Key-Pair-Id=APKAIPGQN6BDBMBZ2LCA"
+                                                            data-alternative-src="/natura-cosmeticos-sa/mx/2021/02/es-mx/revista/ciclo-02-wpmx/ViewFile816119.ashx">
+                                                    </div>
+                                                </div>
+
+                                                <div id="img_7" class="pageimage spread-offset-1">
+                                                    <img data-pagenumber="8" class="book-page loaded"
+                                                        src="https://cdn.ipaper.io/iPaper/Papers/7084901d-0b49-4300-98b6-f779b912928b/Pages/8/Zoom.jpg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uaXBhcGVyLmlvL2lQYXBlci9QYXBlcnMvNzA4NDkwMWQtMGI0OS00MzAwLTk4YjYtZjc3OWI5MTI5MjhiL1BhZ2VzLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2MTE4MTIyMDV9fX1dfQ__&amp;Signature=FoVwVOm24Ra0oqHg0wAuiYAIBkUM4vtGXOTne~Nxkg50TvZVVC2zzW4SoJbTB7tqCu~o8wNQCJQNcByxO6WxbF7bBXrnLsYuBXC6B5PmruoHqqN4Ue6xRC8rrXR0VsSUOITDCI8WKVPnq~ryTFFp5UfHT8esLficuvI8vMHBPwQ_&amp;Key-Pair-Id=APKAIPGQN6BDBMBZ2LCA">
+                                                </div>
+                                                <div id="img_8" class="pageimage spread-offset-2">
+                                                    <img data-pagenumber="9" class="book-page loaded"
+                                                        src="https://cdn.ipaper.io/iPaper/Papers/7084901d-0b49-4300-98b6-f779b912928b/Pages/9/Zoom.jpg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uaXBhcGVyLmlvL2lQYXBlci9QYXBlcnMvNzA4NDkwMWQtMGI0OS00MzAwLTk4YjYtZjc3OWI5MTI5MjhiL1BhZ2VzLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2MTE4MTIyMDV9fX1dfQ__&amp;Signature=FoVwVOm24Ra0oqHg0wAuiYAIBkUM4vtGXOTne~Nxkg50TvZVVC2zzW4SoJbTB7tqCu~o8wNQCJQNcByxO6WxbF7bBXrnLsYuBXC6B5PmruoHqqN4Ue6xRC8rrXR0VsSUOITDCI8WKVPnq~ryTFFp5UfHT8esLficuvI8vMHBPwQ_&amp;Key-Pair-Id=APKAIPGQN6BDBMBZ2LCA">
+                                                </div>
+
+                                                <div class="o-highlight">
+                                                    <div data-pagenumber="8" class="o-highlight__panel"></div>
+                                                    <div data-pagenumber="9" class="o-highlight__panel"></div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div id="spread-5"
+                                            class="pw book-spread child-count-2 spread-offset-right-65 is-zoomable"
+                                            data-spreadnumber="5">
+                                            <div class="linkbox spread-elements" data-id="9" data-dom-cache-id="7">
+                                                <div class="pagelink linktooltip book-pageelement book-pageelement--shopitem"
+                                                    id="enrichment_430005020" data-pageelement-id="430005020"
+                                                    style="width: 3%; height: 4.4%; left: 59%; top: 72.6%; z-index: 15998; display: block;">
+                                                    <div class="pagelink-content"
+                                                        style="opacity: 1; background-color: transparent; border-color: rgb(0, 0, 0); border-width: 0px; transition: none 0s ease 0s; display: block; --transform-scale:1; --transform-translate-x:0px; --transform-translate-y:0px;">
+                                                        <img style="width: 100%; height: 100%"
+                                                            class="pagelink-content__image"
+                                                            src="https://cdn.ipaper.io/iPaper/Files/5cf464e2-10c9-4d4d-963b-b4d89dff6fbb.svg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uaXBhcGVyLmlvL2lQYXBlci9GaWxlcy8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNjQzMjYxODA1fX19XX0_&amp;Signature=V1iFD3wztu0gHg2kt1jFhFzrPCinuo~vjrYK1EgjbxOo~r7mAxbNdjYkjj4Wn2OSPkbbyhLcFzZEA6jQHgIb1o3n5HPbvYxC9IkmhrrXhSFA3LLsXbi86M5alPTYnSN9DWhZYv0XsCoLIqOAFA2qDmzvURgzdOvpCR1TTB1LdXE_&amp;Key-Pair-Id=APKAIPGQN6BDBMBZ2LCA"
+                                                            data-original-src="https://cdn.ipaper.io/iPaper/Files/5cf464e2-10c9-4d4d-963b-b4d89dff6fbb.svg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uaXBhcGVyLmlvL2lQYXBlci9GaWxlcy8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNjQzMjYxODA1fX19XX0_&amp;Signature=V1iFD3wztu0gHg2kt1jFhFzrPCinuo~vjrYK1EgjbxOo~r7mAxbNdjYkjj4Wn2OSPkbbyhLcFzZEA6jQHgIb1o3n5HPbvYxC9IkmhrrXhSFA3LLsXbi86M5alPTYnSN9DWhZYv0XsCoLIqOAFA2qDmzvURgzdOvpCR1TTB1LdXE_&amp;Key-Pair-Id=APKAIPGQN6BDBMBZ2LCA"
+                                                            data-alternative-src="/natura-cosmeticos-sa/mx/2021/02/es-mx/revista/ciclo-02-wpmx/ViewFile816119.ashx">
+                                                    </div>
+                                                </div>
+                                                <div class="pagelink linktooltip book-pageelement book-pageelement--shopitem"
+                                                    id="enrichment_430005019" data-pageelement-id="430005019"
+                                                    style="width: 3%; height: 4.4%; left: 9.05%; top: 72.4%; z-index: 15999; display: block;">
+                                                    <div class="pagelink-content"
+                                                        style="opacity: 1; background-color: transparent; border-color: rgb(0, 0, 0); border-width: 0px; transition: none 0s ease 0s; display: block; --transform-scale:1; --transform-translate-x:0px; --transform-translate-y:0px;">
+                                                        <img style="width: 100%; height: 100%"
+                                                            class="pagelink-content__image"
+                                                            src="https://cdn.ipaper.io/iPaper/Files/5cf464e2-10c9-4d4d-963b-b4d89dff6fbb.svg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uaXBhcGVyLmlvL2lQYXBlci9GaWxlcy8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNjQzMjYxODA1fX19XX0_&amp;Signature=V1iFD3wztu0gHg2kt1jFhFzrPCinuo~vjrYK1EgjbxOo~r7mAxbNdjYkjj4Wn2OSPkbbyhLcFzZEA6jQHgIb1o3n5HPbvYxC9IkmhrrXhSFA3LLsXbi86M5alPTYnSN9DWhZYv0XsCoLIqOAFA2qDmzvURgzdOvpCR1TTB1LdXE_&amp;Key-Pair-Id=APKAIPGQN6BDBMBZ2LCA"
+                                                            data-original-src="https://cdn.ipaper.io/iPaper/Files/5cf464e2-10c9-4d4d-963b-b4d89dff6fbb.svg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uaXBhcGVyLmlvL2lQYXBlci9GaWxlcy8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNjQzMjYxODA1fX19XX0_&amp;Signature=V1iFD3wztu0gHg2kt1jFhFzrPCinuo~vjrYK1EgjbxOo~r7mAxbNdjYkjj4Wn2OSPkbbyhLcFzZEA6jQHgIb1o3n5HPbvYxC9IkmhrrXhSFA3LLsXbi86M5alPTYnSN9DWhZYv0XsCoLIqOAFA2qDmzvURgzdOvpCR1TTB1LdXE_&amp;Key-Pair-Id=APKAIPGQN6BDBMBZ2LCA"
+                                                            data-alternative-src="/natura-cosmeticos-sa/mx/2021/02/es-mx/revista/ciclo-02-wpmx/ViewFile816119.ashx">
+                                                    </div>
+                                                </div>
+
+                                                <div id="img_9" class="pageimage spread-offset-1">
+                                                    <img data-pagenumber="10" class="book-page loaded"
+                                                        src="https://cdn.ipaper.io/iPaper/Papers/7084901d-0b49-4300-98b6-f779b912928b/Pages/10/Zoom.jpg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uaXBhcGVyLmlvL2lQYXBlci9QYXBlcnMvNzA4NDkwMWQtMGI0OS00MzAwLTk4YjYtZjc3OWI5MTI5MjhiL1BhZ2VzLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2MTE4MTIyMDV9fX1dfQ__&amp;Signature=FoVwVOm24Ra0oqHg0wAuiYAIBkUM4vtGXOTne~Nxkg50TvZVVC2zzW4SoJbTB7tqCu~o8wNQCJQNcByxO6WxbF7bBXrnLsYuBXC6B5PmruoHqqN4Ue6xRC8rrXR0VsSUOITDCI8WKVPnq~ryTFFp5UfHT8esLficuvI8vMHBPwQ_&amp;Key-Pair-Id=APKAIPGQN6BDBMBZ2LCA">
+                                                </div>
+                                                <div id="img_10" class="pageimage spread-offset-2">
+                                                    <img data-pagenumber="11" class="book-page loaded"
+                                                        src="https://cdn.ipaper.io/iPaper/Papers/7084901d-0b49-4300-98b6-f779b912928b/Pages/11/Zoom.jpg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uaXBhcGVyLmlvL2lQYXBlci9QYXBlcnMvNzA4NDkwMWQtMGI0OS00MzAwLTk4YjYtZjc3OWI5MTI5MjhiL1BhZ2VzLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE2MTE4MTIyMDV9fX1dfQ__&amp;Signature=FoVwVOm24Ra0oqHg0wAuiYAIBkUM4vtGXOTne~Nxkg50TvZVVC2zzW4SoJbTB7tqCu~o8wNQCJQNcByxO6WxbF7bBXrnLsYuBXC6B5PmruoHqqN4Ue6xRC8rrXR0VsSUOITDCI8WKVPnq~ryTFFp5UfHT8esLficuvI8vMHBPwQ_&amp;Key-Pair-Id=APKAIPGQN6BDBMBZ2LCA">
+                                                </div>
+
+                                                <div class="o-highlight">
+                                                    <div data-pagenumber="10" class="o-highlight__panel"></div>
+                                                    <div data-pagenumber="11" class="o-highlight__panel"></div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <div class="bookNavWrap" id="rightClickableBackground">
+
+                            <div class="navWrapper right tblNavForward" style="">
+                                <div class="smallNavBtn" id="navToLast">
+                                    <div class="forward gradient">
+                                        <svg class="o-icon o-icon--block o-icon--lg" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                                            <use xlink:href="#svg-icon-last"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="largeNavBtn" id="navToNext" style="height: 589px;">
+                                    <div class="forward gradient" style="line-height: 589px;">
+                                        <svg class="o-icon o-icon--block o-icon--xxl" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                                            <use xlink:href="#svg-icon-next"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- MDB -->
+        <script type="text/javascript" src="https://omeollin.github.io/FerreteriaCuautitlan/MDB5/js/mdb.min.js"></script>
+    </body>
 
 </html>
