@@ -13,9 +13,19 @@
         <meta name="author" content="ollingeeks">
 
         <!-- Storage management -->
-        <script src="https://omeollin.github.io/FerreteriaCuautitlan/js/Storage.js"></script>
+        <script type="text/javascript" src="https://omeollin.github.io/FerreteriaCuautitlan/js/Storage.js"></script>
         <!-- Sidenav behavior -->
-        <script type="text/javascript" src="https://omeollin.github.io/FerreteriaCuautitlan/js/Sidenav.js"></script>
+        <script type="text/javascript">
+            /* Open the sidenav */
+            function openNav(sidenavName) {
+                document.getElementById(sidenavName).style.width = "100%";
+            }
+
+            /* Close/hide the sidenav */
+            function closeNav(sidenavName) {
+                document.getElementById(sidenavName).style.width = "0";
+            }
+        </script>
         <!-- MDB -->
         <script type="text/javascript" src="https://omeollin.github.io/FerreteriaCuautitlan/MDB5/js/mdb.min.js"></script>
 
@@ -76,7 +86,7 @@
         <!-- Search sidenav -->
         <!-- Cart sidenav -->
         <div id="cartSidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav('articlesSidenav')">&times;</a>
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav('cartSidenav')">&times;</a>
             <a href="#">About</a>
             <a href="#">Services</a>
             <a href="#">Clients</a>
@@ -194,7 +204,7 @@
         <!-- Navbar -->
 
         <!-- Carousel wrapper -->
-        <div style="margin-top: 25px;" id="carouselBasicExample" class="d-flex justify-content-center carousel slide carousel-fade" data-mdb-ride="carousel">
+        <div style="margin-top: 25px;" id="carouselBasicExample" class="d-flex justify-content-center carousel slide touch" data-mdb-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
                 <li data-mdb-target="#carouselBasicExample" data-mdb-slide-to="0" class="active"></li>
