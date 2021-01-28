@@ -6,6 +6,7 @@
 /* The navigation bar */
 .navbar {
 	z-index: 2; /* Stay on bottom */
+	box-shadow: none; /* No shadows */
 }
 /* The carousel */
 .carousel {
