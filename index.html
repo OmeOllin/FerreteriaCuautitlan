@@ -67,13 +67,13 @@
 
     <!-- Search sidenav -->
     <div id="searchSidenav" class="sidenav">
-        <div class="container">
+        <div class="container" style="height: 100%;">
             <!-- Header -->
             <table style="width: 100%;">
                 <tr>
                     <td style="width: 80%;">
                         <input style="width:100%" type="search" value="" placeholder="Teclee alguna palabra"
-                             minlength="2" spellcheck="false" />
+                            minlength="2" spellcheck="false" />
                     </td>
                     <td>
                         <a class="px-1" href="#">
@@ -85,9 +85,17 @@
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav('searchSidenav')">&times;</a>
 
             <!-- Body -->
-            <div>
-
+            <div style="display: table; height: 90%; width: 100%; color: #818181; overflow: hidden;">
+                <div style="display: table-cell; vertical-align: middle;">
+                    <div>
+                        <p style="text-align: center">
+                            <span<i class="fas fa-search fa-lg"></i></span>
+                        </p>
+                        <p style="text-align: center"><b>No se encontraron resultados para la b&uacute;squeda</b></p>
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
     <!-- Search sidenav -->
@@ -268,12 +276,12 @@
     <!-- Script Index- -->
     <script type="text/javascript">
         //Se setea el tipo de colapsable cuando se redimensiona la ventana
-        window.onresize = function(){ setTypecollapse(); }
+        window.onresize = function () { setTypecollapse(); }
         //Se setea el tipo de colapsable al cargar la ventana
-        window.onload = function(){ setTypecollapse(); }
+        window.onload = function () { setTypecollapse(); }
     </script>
     <!-- Script Index- -->
-    
+
 </body>
 
 </html>
