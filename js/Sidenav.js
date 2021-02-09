@@ -1,7 +1,8 @@
 var SIDENAV_FULL = 0;
 var SIDENAV_PUSH = 1;
 var TYPECOLLAPSE = null;
-var BODY = document.getElementsByTagName('body').length > 0 ? document.getElementsByTagName('body')[0] : null;
+var BODY = document.body || null;
+let sidenavPushWidth = '360px';
 
 /** Abre el sidenav cart y cierra los demás */
 function openCartNav(){
@@ -72,8 +73,11 @@ function openNav(sidenavName, sidenavType = SIDENAV_FULL) {
     switch (sidenavType) {
         case SIDENAV_PUSH:
             //SIDENAV_PUSH
-            document.getElementById(sidenavName).style.width = "250px";
-            if(BODY != null){ BODY.style.marginLeft = "250px"; }
+            document.getElementById(sidenavName).style.width = sidenavPushWidth;
+            if(BODY != null){ 
+                BODY.style.marginLeft = sidenavPushWidth; 
+                BODY.style.backgroundColor = 'rgba(0, 0, 0, 0.4)';
+            }
             break;
         default:
             //SIDENAV_FULL
@@ -87,8 +91,11 @@ function closeNav(sidenavName, sidenavType = SIDENAV_FULL) {
     switch (sidenavType) {
         case SIDENAV_PUSH:
             //SIDENAV_PUSH
-            document.getElementById(sidenavName).style.width = "0px";
-            if(BODY != null){ BODY.style.marginLeft = "0px"; }
+            document.getElementById(sidenavName).style.width = "0";
+            if(BODY != null){ 
+                BODY.style.marginLeft = "0"; 
+                BODY.style.backgroundColor = 'white';
+            }
             break;
         default:
             //SIDENAV_FULL
