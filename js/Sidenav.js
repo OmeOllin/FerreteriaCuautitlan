@@ -1,7 +1,6 @@
 var SIDENAV_FULL = 0;
 var SIDENAV_PUSH = 1;
 var TYPECOLLAPSE = null;
-var BODY = document.body || null;
 let sidenavPushWidth = '360px';
 
 /** Abre el sidenav cart y cierra los demás */
@@ -74,10 +73,8 @@ function openNav(sidenavName, sidenavType = SIDENAV_FULL) {
         case SIDENAV_PUSH:
             //SIDENAV_PUSH
             document.getElementById(sidenavName).style.width = sidenavPushWidth;
-            if(BODY != null){ 
-                BODY.style.marginLeft = sidenavPushWidth; 
-                BODY.style.backgroundColor = 'rgba(0, 0, 0, 0.4)';
-            }
+            document.body.style.marginLeft = sidenavPushWidth; 
+            document.body.style.backgroundColor = 'rgba(0, 0, 0, 0.4)';
             break;
         default:
             //SIDENAV_FULL
@@ -92,10 +89,8 @@ function closeNav(sidenavName, sidenavType = SIDENAV_FULL) {
         case SIDENAV_PUSH:
             //SIDENAV_PUSH
             document.getElementById(sidenavName).style.width = "0";
-            if(BODY != null){ 
-                BODY.style.marginLeft = "0"; 
-                BODY.style.backgroundColor = 'white';
-            }
+            document.body.style.marginLeft = "0"; 
+            document.body.style.backgroundColor = 'white';
             break;
         default:
             //SIDENAV_FULL
