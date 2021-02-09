@@ -16,11 +16,12 @@
 .sidenav {
 	height: 100%; /* 100% Full-height */
 	width: 0; /* 0 width - change this with JavaScript */
+	border: 1px solid gainsboro;
 	position: fixed; /* Stay in place */
 	z-index: 3; /* Stay on top */
 	top: 0; /* Stay at the top */
 	right: 0; /* right side nav */
-	background-color: rgba(50,50,50,1); 
+	background-color: rgba(250,250,250,1); 
 	overflow-x: hidden; /* Disable horizontal scroll */
 	padding-top: 60px; /* Place content 60px from the top */
 	transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */

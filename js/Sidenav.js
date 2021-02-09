@@ -6,28 +6,28 @@ let sidenavPushWidth = '360px';
 /** Abre el sidenav cart y cierra los demás */
 function openCartNav(){
     openNav('cartSidenav', TYPECOLLAPSE);
-    closeNav('searchSidenav');
-    closeNav('contentSidenav');
+    closeNav('searchSidenav', TYPECOLLAPSE);
+    closeNav('contentSidenav', TYPECOLLAPSE);
 }
 /** Abre el sidenav search y cierra los demás */
 function openSearchNav(){
-    closeNav('cartSidenav');
+    closeNav('cartSidenav', TYPECOLLAPSE);
     openNav('searchSidenav', TYPECOLLAPSE);
-    closeNav('contentSidenav');
+    closeNav('contentSidenav', TYPECOLLAPSE);
 }
 /** Abre el sidenav content y cierra los demás */
 function openContentNav(){
-    closeNav('cartSidenav');
-    closeNav('searchSidenav');
+    closeNav('cartSidenav', TYPECOLLAPSE);
+    closeNav('searchSidenav', TYPECOLLAPSE);
     openNav('contentSidenav', TYPECOLLAPSE);
 }
 
 /** Establece automáticamente el tipo de colapsable, dependiendo del tamaño de la pantalla */
 function setTypecollapse(){
     //Se cierran todos los navs
-    closeNav('cartSidenav');
-    closeNav('searchSidenav');
-    closeNav('contentSidenav');
+    closeNav('cartSidenav', TYPECOLLAPSE);
+    closeNav('searchSidenav', TYPECOLLAPSE);
+    closeNav('contentSidenav', TYPECOLLAPSE);
 
     //Se determina el tamaño de la pantalla
     if (screen.width < 1024) {
@@ -73,8 +73,7 @@ function openNav(sidenavName, sidenavType = SIDENAV_FULL) {
         case SIDENAV_PUSH:
             //SIDENAV_PUSH
             document.getElementById(sidenavName).style.width = sidenavPushWidth;
-            document.body.style.marginLeft = sidenavPushWidth; 
-            document.body.style.backgroundColor = 'rgba(0, 0, 0, 0.4)';
+            document.body.style.marginRight = sidenavPushWidth; 
             break;
         default:
             //SIDENAV_FULL
@@ -89,8 +88,7 @@ function closeNav(sidenavName, sidenavType = SIDENAV_FULL) {
         case SIDENAV_PUSH:
             //SIDENAV_PUSH
             document.getElementById(sidenavName).style.width = "0";
-            document.body.style.marginLeft = "0"; 
-            document.body.style.backgroundColor = 'white';
+            document.body.style.marginRight = "0"; 
             break;
         default:
             //SIDENAV_FULL
