@@ -101,11 +101,37 @@
     <!-- Search sidenav -->
     <!-- Cart sidenav -->
     <div id="cartSidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav('cartSidenav')">&times;</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Clients</a>
-        <a href="#">Contact</a>
+        <div class="container" style="height: 100%;">
+            <!-- Header -->
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav('cartSidenav')">&times;</a>
+
+            <!-- Body -->
+            <div style="display: table; height: 70%; width: 100%; color: #818181; overflow: hidden;">
+                <div style="display: table-cell; vertical-align: middle;">
+                    <div>
+                        <p style="text-align: center">
+                            <span<i class="fas fa-shopping-cart fa-lg"></i></span>
+                        </p>
+                        <p style="text-align: center"><b>El carrito de la compra est&aacute; vac&iacute;o</b></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <table style="height: 30%; width: 100%;">
+                <tr>
+                    <td align="center" class="text-light">
+                       0 art&iacute;culo(s) <br> Precio total: 0.00 MEX
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="btn bg-success text-light"><i class="fab fa-whatsapp text-light"></i> Enviar el pedido a tu consultor(a) por WhatsApp</button>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
     </div>
     <!-- Cart sidenav -->
     <!-- Content sidenav -->
