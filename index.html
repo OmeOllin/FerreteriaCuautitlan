@@ -109,7 +109,6 @@
     </div>
     <!-- Cart sidenav -->
     <!-- Content sidenav -->
-    <iframe id="frmFile" src="https://omeollin.github.io/FerreteriaCuautitlan/docs/contentIndex.txt" onload="crearIndiceContenido();" style="display: none;"></iframe>
     <div id="contentSidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav('contentSidenav')">&times;</a>
     </div>
@@ -275,27 +274,38 @@
         //Se setea el tipo de colapsable cuando se redimensiona la ventana
         window.onresize = function () { setTypecollapse(); }
         //Se setea el tipo de colapsable al cargar la ventana
-        window.onload = function () { setTypecollapse(); }
+        window.onload = function () { 
+            crearIndiceContenido();
+            setTypecollapse(); 
+        }
+
+        var xhrRequest = function (url, type, callback) {
+            var xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+                callback(this.responseText);
+            };
+            xhr.open(type, url);
+            xhr.send();
+        };     
 
         function crearIndiceContenido(){
-            //Obtiene la referencia al iframe que tiene el texto para el índice de contenidos.
-            let oFrame = document.getElementById('frmFile');
-            //Obtiene el contenido del documento cargado en el iframe.
-            let strRawContents = oFrame.contentWindow.document.body.childNodes[0].innerHTML;
-            //Elimina los retornos de carro del contenido del documento.
-            while (strRawContents.indexOf('\r') >= 0)
-                strRawContents = strRawContents.replace('\r', '');
+            //Obtiene el contenido del archivo de texto.
+            xhrRequest('https://omeollin.github.io/FerreteriaCuautitlan/docs/contentIndex.txt', 'GET', function(strRawContents) { 
+                //Elimina los retornos de carro del contenido del documento.
+                while (strRawContents.indexOf('\r') >= 0)
+                    strRawContents = strRawContents.replace('\r', '');
 
-            //Crea un arreglo de lineas del contenido del documento.
-            let arrLines = strRawContents.split('\n');
-            //Por cada una de las lineas del documento.
-            for (let i = 0; i < arrLines.length; i++) {
-                let curLine = arrLines[i];
-                let arrLine = curLine.split('||');
-                //Agrega un elemento al índice de contenido.
-                let oSidenav = document.getElementById('contentSidenav');
-                oSidenav.append('<a href="' + arrLine[0] + '">' + arrLine[1] + '</a>');
-            }
+                //Crea un arreglo de lineas del contenido del documento.
+                let arrLines = strRawContents.split('\n');
+                //Por cada una de las lineas del documento.
+                for (let i = 0; i < arrLines.length; i++) {
+                    let curLine = arrLines[i];
+                    let arrLine = curLine.split('||');
+                    //Agrega un elemento al índice de contenido.
+                    let oSidenav = document.getElementById('contentSidenav');
+                    oSidenav.innerHTML += '<a href="' + arrLine[1] + '">' + arrLine[0] + '</a>';
+                }
+            });
         }
     </script>
     <!-- Script Index- -->
