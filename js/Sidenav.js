@@ -5,18 +5,21 @@ let sidenavPushWidth = '360px';
 
 /** Abre el sidenav cart y cierra los demás */
 function openCartNav(){
-    openNav('cartSidenav', TYPECOLLAPSE);
+    //Primero se cierran los otros dos navs.
     closeNav('searchSidenav', TYPECOLLAPSE);
     closeNav('contentSidenav', TYPECOLLAPSE);
+    openNav('cartSidenav', TYPECOLLAPSE);
 }
 /** Abre el sidenav search y cierra los demás */
 function openSearchNav(){
+    //Primero se cierran los otros dos navs.
     closeNav('cartSidenav', TYPECOLLAPSE);
-    openNav('searchSidenav', TYPECOLLAPSE);
     closeNav('contentSidenav', TYPECOLLAPSE);
+    openNav('searchSidenav', TYPECOLLAPSE);
 }
 /** Abre el sidenav content y cierra los demás */
 function openContentNav(){
+    //Primero se cierran los otros dos navs.
     closeNav('cartSidenav', TYPECOLLAPSE);
     closeNav('searchSidenav', TYPECOLLAPSE);
     openNav('contentSidenav', TYPECOLLAPSE);
