@@ -32,8 +32,8 @@ function setTypecollapse(){
     closeNav('searchSidenav', TYPECOLLAPSE);
     closeNav('contentSidenav', TYPECOLLAPSE);
 
-    //Se determina el tamaño de la pantalla
-    if (screen.width < 1366) {
+    //Se determina el tamaño de la ventana
+    if (window.innerWidth < 800) {
         //Pequeña
         TYPECOLLAPSE = SIDENAV_FULL;
     }

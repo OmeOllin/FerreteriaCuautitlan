@@ -39,7 +39,13 @@
 
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
-	color: #f1f1f1;
+	color: black;
+	background-color: gold;
+}
+
+/* When you mouse over span on sidenav, change the cursor */
+.sidenav span:hover {
+	cursor: pointer;
 }
 
 /* Position and style the close button (top right corner) */
