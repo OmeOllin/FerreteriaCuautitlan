@@ -33,7 +33,7 @@ function setTypecollapse(){
     closeNav('contentSidenav', TYPECOLLAPSE);
 
     //Se determina el tamaño de la pantalla
-    if (screen.width < 1024) {
+    if (screen.width < 1366) {
         //Pequeña
         TYPECOLLAPSE = SIDENAV_FULL;
     }
@@ -51,7 +51,6 @@ function initializeEvents(){
     let crNavA = document.getElementById('crNavA');
     let crNavB = document.getElementById('crNavB');
 
-    let srNavA = document.getElementById('srNavA');
     let srNavB = document.getElementById('srNavB');
     let srNavC = document.getElementById('srNavC');
 
@@ -62,7 +61,6 @@ function initializeEvents(){
     crNavA.onclick = function(){ openCartNav(); }
     crNavB.onclick = function(){ openCartNav(); }
 
-    srNavA.onclick = function(){ openSearchNav(); }
     srNavB.onclick = function(){ openSearchNav(); }
     srNavC.onclick = function(){ openSearchNav(); }
 
