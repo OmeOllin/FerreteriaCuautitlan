@@ -40,7 +40,7 @@
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
 	color: black;
-	background-color: gold;
+    border-left: 10px solid gold;
 }
 
 /* When you mouse over span on sidenav, change the cursor */
