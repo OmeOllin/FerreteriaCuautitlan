@@ -16,8 +16,8 @@
     <script type="text/javascript" src="https://omeollin.github.io/FerreteriaCuautitlan/js/Storage.js"></script>
     <!-- Sidenav behavior -->
     <script type="text/javascript" src="https://omeollin.github.io/FerreteriaCuautitlan/js/Sidenav.js"></script>
-    <!-- MDB -->
-    <script type="text/javascript" src="https://omeollin.github.io/FerreteriaCuautitlan/MDB5/js/mdb.min.js"></script>
+    <!-- BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 
     <!-- Index additional styles -->
     <link rel="stylesheet" href="https://omeollin.github.io/FerreteriaCuautitlan/css/Index.css">
@@ -27,8 +27,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
     <!-- Google Fonts Roboto -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
-    <!-- MDB -->
-    <link rel="stylesheet" href="https://omeollin.github.io/FerreteriaCuautitlan/MDB5/css/mdb.min.css" />
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 </head>
 
 <body>
@@ -196,12 +196,12 @@
                 </li>
                 <li class="nav-item dropdown d-md-none">
                     <a class="nav-link px-3 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink"
-                        role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fas fa-bars fa-lg"></i>
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                    <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="navbarDropdownMenuLink">
                         <li class="nav-item d-md-none">
-                            <a class="nav-link px-3" onclick="descargarPDF();" href="#"></a>
+                            <a class="dropdown-item" onclick="descargarPDF();" href="#">
                                 <span><i class="fas fa-download fa-lg"></i></span> Descargar PDF
                             </a>
                         </li>
@@ -224,29 +224,18 @@
     <!-- Navbar -->
 
     <!-- Carousel wrapper -->
-    <div id="carouselBasicExample" class="d-flex justify-content-center carousel slide touch" data-mdb-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-mdb-target="#carouselBasicExample" data-mdb-slide-to="0" class="active"></li>
-            <li data-mdb-target="#carouselBasicExample" data-mdb-slide-to="1"></li>
-            <li data-mdb-target="#carouselBasicExample" data-mdb-slide-to="2"></li>
-        </ol>
-
-        <!-- Inner -->
-        <div id="carouselInner" style="width: 432px; height: 589px;" class="shadow-2-strong carousel-inner">
-            
+    <div id="carouselPaginas" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div id="carouselInner" class="carousel-inner">
+          
         </div>
-        <!-- Inner -->
-
-        <!-- Controls -->
-        <a class="carousel-control-prev" href="#carouselBasicExample" role="button" data-mdb-slide="prev">
-            <span class="carousel-control-prev-icon text-dark" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselBasicExample" role="button" data-mdb-slide="next">
-            <span class="carousel-control-next-icon text-dark" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </a>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselPaginas"  data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselPaginas"  data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
     </div>
     <!-- Carousel wrapper -->
 
@@ -336,12 +325,8 @@
         }
         function agregarPagina(filename, active = false){
             let cI = document.getElementById('carouselInner');
-            cI.innerHTML += '<div class="carousel-item ' + (active ? 'active' : '') + '">'
+            cI.innerHTML += '<div style="text-align: center;" class="carousel-item ' + (active ? 'active' : '') + '">'
                                 + '<img src="https://omeollin.github.io/FerreteriaCuautitlan/img/pages/' + filename + '" style="height: 589px;" alt="..." />'
-                                + '<div class="carousel-caption d-none d-md-block">'
-                                    + '<h5>First slide label</h5>'
-                                    + '<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>'
-                                + '</div>'
                             + '</div>';
         }
 
