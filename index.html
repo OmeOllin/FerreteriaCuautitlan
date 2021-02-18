@@ -160,12 +160,12 @@
                     <!-- Empty placeholder to balance distribution of elements -->
                 </li>
                 <li class="nav-item d-none d-md-block">
-                    <a class="nav-link px-3" target="_blank" href="https://omeollin.github.io/FerreteriaCuautitlan/docs/catalogo.pdf">
+                    <a class="nav-link px-3" onclick="descargarPDF();" href="#">
                         <span><i class="fas fa-download fa-lg"></i></span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <span class="nav-link px-3">0 - 0 / 0</span>
+                    <a id="linkCC" onclick="habilitarCampoCaptura(this);" class="nav-link px-3" href="#"> 1 / 0</a>
                 </li>
                 <li id="crNavA" class="nav-item d-none d-md-block">
                     <a class="nav-link px-3" href="#">
@@ -201,7 +201,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
                         <li class="nav-item d-md-none">
-                            <a class="dropdown-item" target="_blank" href="https://omeollin.github.io/FerreteriaCuautitlan/docs/catalogo.pdf">
+                            <a class="nav-link px-3" onclick="descargarPDF();" href="#"></a>
                                 <span><i class="fas fa-download fa-lg"></i></span> Descargar PDF
                             </a>
                         </li>
@@ -233,36 +233,8 @@
         </ol>
 
         <!-- Inner -->
-        <div style="width: 432px; height: 589px;" class="shadow-2-strong carousel-inner">
-            <!-- Single item -->
-            <div class="carousel-item active">
-                <img src="https://omeollin.github.io/FerreteriaCuautitlan/img/hojaExample1.jpg" style="height: 589px;"
-                    alt="..." />
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>First slide label</h5>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </div>
-            </div>
-
-            <!-- Single item -->
-            <div class="carousel-item">
-                <img src="https://omeollin.github.io/FerreteriaCuautitlan/img/hojaExample1.jpg" style="height: 589px;"
-                    alt="..." />
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Second slide label</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-            </div>
-
-            <!-- Single item -->
-            <div class="carousel-item">
-                <img src="https://omeollin.github.io/FerreteriaCuautitlan/img/hojaExample1.jpg" style="height: 589px;"
-                    alt="..." />
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Third slide label</h5>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                </div>
-            </div>
+        <div id="carouselInner" style="width: 432px; height: 589px;" class="shadow-2-strong carousel-inner">
+            
         </div>
         <!-- Inner -->
 
@@ -285,8 +257,10 @@
         //Se setea el tipo de colapsable al cargar la ventana
         window.onload = function () { 
             crearIndiceContenido();
+            crearMapaPaginas();
             setTypecollapse(); 
         }
+
 
         var xhrRequest = function (url, type, callback) {
             var xhr = new XMLHttpRequest();
@@ -298,24 +272,151 @@
         };     
 
         function crearIndiceContenido(){
+            let url = 'https://omeollin.github.io/FerreteriaCuautitlan/docs/contentIndex.txt';
             //Obtiene el contenido del archivo de texto.
-            xhrRequest('https://omeollin.github.io/FerreteriaCuautitlan/docs/contentIndex.txt', 'GET', function(strRawContents) { 
-                //Elimina los retornos de carro del contenido del documento.
-                while (strRawContents.indexOf('\r') >= 0)
-                    strRawContents = strRawContents.replace('\r', '');
+            xhrRequest(url, 'GET', function(strRawContents) { 
+                try {
+                    //Elimina los retornos de carro del contenido del documento.
+                    while (strRawContents.indexOf('\r') >= 0)
+                        strRawContents = strRawContents.replace('\r', '');
 
-                //Crea un arreglo de lineas del contenido del documento.
-                let arrLines = strRawContents.split('\n');
-                //Por cada una de las lineas del documento.
-                for (let i = 0; i < arrLines.length; i++) {
-                    let curLine = arrLines[i];
-                    let arrLine = curLine.split('||');
-                    //Agrega un elemento al índice de contenido.
-                    let oSidenav = document.getElementById('contentSidenav');
-                    oSidenav.innerHTML += '<a href="' + arrLine[1] + '">' + arrLine[0] + '</a>';
+                    //Crea un arreglo de lineas del contenido del documento.
+                    let arrLines = strRawContents.split('\n');
+                    //Por cada una de las lineas del documento.
+                    for (let i = 0; i < arrLines.length; i++) {
+                        let curLine = arrLines[i];
+                        let arrLine = curLine.split('||');
+                        //Agrega un elemento al índice de contenido.
+                        let oSidenav = document.getElementById('contentSidenav');
+                        oSidenav.innerHTML += '<a href="' + arrLine[1] + '">' + arrLine[0] + '</a>';
+                    }
+                } catch (e) {
+                    alert(e);
                 }
             });
         }
+
+        var paginas = [];
+        function crearMapaPaginas(){
+            let url = 'https://omeollin.github.io/FerreteriaCuautitlan/docs/pagesMap.txt';
+            //Obtiene el contenido del archivo de texto.
+            xhrRequest(url, 'GET', function(strRawContents) { 
+                try {
+                    //Elimina los retornos de carro del contenido del documento.
+                    while (strRawContents.indexOf('\r') >= 0)
+                        strRawContents = strRawContents.replace('\r', '');
+
+                    //Crea un arreglo de lineas del contenido del documento.
+                    let arrLines = strRawContents.split('\n');
+                    //Por cada una de las lineas del documento, se mapea una página
+                    for (let i = 0; i < arrLines.length; i++) {
+                        let curLine = arrLines[i];
+                        //Se obtienen los elementos de la página.
+                        let arrA = curLine.split('||');
+                        //Se agrega una página al arreglo.
+                        paginas.push({
+                            index: arrA[0],
+                            filename: arrA[1],
+                            tags: arrA[2],
+                            positions: arrA[3]
+                        });
+                    }
+
+                    //Se cargan las tres primeras páginas. Se coloca la primera como activa.
+                    agregarPagina(paginas[0].filename, true);
+                    agregarPagina(paginas[1].filename);
+                    agregarPagina(paginas[2].filename);
+
+                    let link = document.getElementById('linkCC');
+                    link.innerHTML = ' 1 / ' + paginas.length;
+                } catch (e) {
+                    alert(e);
+                }
+            });
+        }
+        function agregarPagina(filename, active = false){
+            let cI = document.getElementById('carouselInner');
+            cI.innerHTML += '<div class="carousel-item ' + (active ? 'active' : '') + '">'
+                                + '<img src="https://omeollin.github.io/FerreteriaCuautitlan/img/pages/' + filename + '" style="height: 589px;" alt="..." />'
+                                + '<div class="carousel-caption d-none d-md-block">'
+                                    + '<h5>First slide label</h5>'
+                                    + '<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>'
+                                + '</div>'
+                            + '</div>';
+        }
+
+
+        function descargarPDF() {
+            var blob = "";
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.onload = function(){
+                if (this.status == 200) {
+                    blob = new Blob([xhr.response], { type: 'application/pdf' });
+
+                    var link = document.createElement('a');
+
+                    link.href = window.URL.createObjectURL(blob);
+                    link.download = "catalogo.pdf";
+
+                    link.click();
+                } else {
+                    alert("Error. Estatus " + this.status + ".");
+                }
+            };
+
+            try {
+                let url = 'https://omeollin.github.io/FerreteriaCuautitlan/docs/catalogo.pdf';
+                xhr.open('GET', url, true);
+
+                xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+                xhr.responseType = 'blob';
+                
+                xhr.send();
+            } catch (e) {
+                alert(e);
+            }
+        }
+
+
+        function setInputFilter(textbox, inputFilter) {
+            ["input", "keydown", "keyup", "mousedown", "mouseup", "select", "contextmenu", "drop"].forEach(function(event) {
+                textbox.addEventListener(event, function() {
+                    if (inputFilter(this.value)) {
+                        this.oldValue = this.value;
+                        this.oldSelectionStart = this.selectionStart;
+                        this.oldSelectionEnd = this.selectionEnd;
+                    } else if (this.hasOwnProperty("oldValue")) {
+                        this.value = this.oldValue;
+                        this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+                    } else {
+                        this.value = "";
+                    }
+                });
+            });
+        }
+
+        function habilitarCampoCaptura(element){
+            let maxPages = 200;
+            element.parentElement.innerHTML = '<div style="background-color: white;" class="py-1 px-0 nav-link"><input id="campoCaptura" style="text-align:center; max-width: 85px;" onkeypress="campoCapturaKeypress(this, event);" onfocusout="deshabilitarCampoCaptura(this);" type="text" /></div>';
+            hhhhhhhsetInputFilter(document.getElementById('campoCaptura'), function(value) {
+                return /^\d{0,3}$/.test(value) && (value === "" || parseInt(value) <= maxPages); 
+            });
+        }
+
+        function campoCapturaKeypress(element, e){
+            if(e.keyCode == 13){
+                deshabilitarCampoCaptura(element);
+                return true;
+            }
+        }
+
+        function deshabilitarCampoCaptura(element){
+            element.parentElement.parentElement.innerHTML = '<a id="linkCC" onclick="habilitarCampoCaptura(this);" class="nav-link px-3" href="#">0 - 0 / ' + paginas.length + '</a>';
+        }
+
     </script>
     <!-- Script Index- -->
 
