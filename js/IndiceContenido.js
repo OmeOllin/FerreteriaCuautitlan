@@ -1,13 +1,5 @@
 function crearIndiceContenido(){
-    let url = 'https://omeollin.github.io/FerreteriaCuautitlan/docs/contentIndex.txt';
-    let xhrRequest = function (url, type, callback) {
-        var xhr = new XMLHttpRequest();
-        xhr.onload = function () {
-            callback(this.responseText);
-        };
-        xhr.open(type, url);
-        xhr.send();
-    };   
+    let url = 'https://omeollin.github.io/FerreteriaCuautitlan/docs/contentIndex.txt';   
     //Obtiene el contenido del archivo de texto.
     xhrRequest(url, 'GET', function(strRawContents) { 
         try {
