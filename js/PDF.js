@@ -1,3 +1,17 @@
+/**
+ * Copyright (C) 2021 Luis Linares - Todos los derechos reservados
+ *
+ * Este código está licenciado bajo la licencia MIT (ver LICENSE.txt para más detalles)
+ *
+ * Este archivo contiene el código para la descarga de la revista en formato PDF.
+ *
+ * @summary Código JS para la descarga del PDF.
+ * @author Luis Linares <luis_linares75@hotmail.com>
+ *
+ * Created at     : 2021-02-19 20:29:37 
+ * Last modified  : 2021-02-19 20:30:16
+ */
+
 function descargarPDF() {
     let blob = "";
 

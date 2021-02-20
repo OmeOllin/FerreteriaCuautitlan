@@ -1,3 +1,18 @@
+/**
+ * Copyright (C) 2021 Luis Linares - Todos los derechos reservados
+ *
+ * Este código está licenciado bajo la licencia MIT (ver LICENSE.txt para más detalles)
+ *
+ * Este archivo contiene la lógica del almacenamiento local de para el control de artículos
+ * del carrito de compra.
+ *
+ * @summary Código JS para el control de artículos en el carrito de compras.
+ * @author Luis Linares <luis_linares75@hotmail.com>
+ *
+ * Created at     : 2021-02-19 20:31:26 
+ * Last modified  : 2021-02-19 20:32:16
+ */
+
 //add new key=>value to the HTML5 storage
 function SaveItem() {
 

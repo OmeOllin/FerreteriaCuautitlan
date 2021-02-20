@@ -1,3 +1,16 @@
+/**
+ * Copyright (C) 2021 Luis Linares - Todos los derechos reservados
+ *
+ * Este código está licenciado bajo la licencia MIT (ver LICENSE.txt para más detalles)
+ *
+ * Este archivo contiene el código para agregar una pantalla de carga a la página y mostrarla / ocultarla conforme se requiera.
+ *
+ * @summary Código JS para el control del modal loading.
+ * @author Luis Linares <luis_linares75@hotmail.com>
+ *
+ * Created at     : 2021-02-19 13:09:06 
+ * Last modified  : 2021-02-19 20:25:00
+ */
 let loadingHTML = '<div id="modal"' 
                     + ' class="modal fade bd-example-modal-lg"'
                     + ' data-backdrop="static"'
