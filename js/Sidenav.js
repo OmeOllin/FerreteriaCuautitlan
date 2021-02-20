@@ -1,3 +1,17 @@
+/**
+ * Copyright (C) 2021 Luis Linares - Todos los derechos reservados
+ *
+ * Este código está licenciado bajo la licencia MIT (ver LICENSE.txt para más detalles)
+ *
+ * Este archivo contiene la lógica para la operación de los menues laterales.
+ *
+ * @summary Código JS para el control de los sidenavs.
+ * @author Luis Linares <luis_linares75@hotmail.com>
+ *
+ * Created at     : 2021-02-19 20:30:32 
+ * Last modified  : 2021-02-19 20:31:18
+ */
+
 var SIDENAV_FULL = 0;
 var SIDENAV_PUSH = 1;
 var TYPECOLLAPSE = null;

@@ -1,3 +1,18 @@
+/**
+ * Copyright (C) 2021 Luis Linares - Todos los derechos reservados
+ *
+ * Este código está licenciado bajo la licencia MIT (ver LICENSE.txt para más detalles)
+ *
+ * Este archivo contiene la lógica de operación de las páginas de la revista. Crea y permite
+ * añadir páginas al carrusel de manera dinámica.
+ *
+ * @summary Código JS para el control de las páginas de la revista.
+ * @author Luis Linares <luis_linares75@hotmail.com>
+ *
+ * Created at     : 2021-02-19 20:28:04 
+ * Last modified  : 2021-02-19 20:29:29
+ */
+
 var paginas = [];
 
 function crearMapaPaginas(){

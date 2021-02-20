@@ -1,3 +1,19 @@
+/**
+ * Copyright (C) 2021 Luis Linares - Todos los derechos reservados
+ *
+ * Este código está licenciado bajo la licencia MIT (ver LICENSE.txt para más detalles)
+ *
+ * Este archivo contiene la lógica del comportamiento del campo de captura de páginas. 
+ * Permite al usuario capturar la página a la que desea navegar.
+ *
+ * @summary Código JS para el campo de captura de página.
+ * @author Luis Linares <luis_linares75@hotmail.com>
+ *
+ * Created at     : 2021-02-19 20:22:32 
+ * Last modified  : 2021-02-19 20:25:31
+ */
+
+
 function setInputFilter(textbox, inputFilter) {
     ["input", "keydown", "keyup", "mousedown", "mouseup", "select", "contextmenu", "drop"].forEach(function(event) {
         textbox.addEventListener(event, function() {
