@@ -10,7 +10,7 @@
  * @author Luis Linares <luis_linares75@hotmail.com>
  *
  * Created at     : 2021-02-19 20:28:04 
- * Last modified  : 2021-02-19 20:29:29
+ * Last modified  : 2021-02-19 22:53:01
  */
 
 var paginas = [];
@@ -40,10 +40,8 @@ function crearMapaPaginas(){
                 });
             }
 
-            //Se cargan las tres primeras páginas. Se coloca la primera como activa.
+            //Se carga la portada y se coloca como activa.
             if(paginas.length >= 1){ agregarPagina(paginas[0].filename, true); }
-            if(paginas.length >= 2){ agregarPagina(paginas[1].filename); }
-            if(paginas.length >= 3){ agregarPagina(paginas[2].filename); }
 
             let link = document.getElementById('linkCC');
             link.innerHTML = ' 1 / ' + paginas.length;
