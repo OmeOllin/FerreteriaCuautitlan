@@ -9,7 +9,7 @@
  * @author Luis Linares <luis_linares75@hotmail.com>
  *
  * Created at     : 2021-02-19 20:30:32 
- * Last modified  : 2021-02-19 20:31:18
+ * Last modified  : 2021-02-19 22:47:06
  */
 
 var SIDENAV_FULL = 0;
@@ -19,6 +19,10 @@ let sidenavPushWidth = '360px';
 
 /** Abre el sidenav cart y cierra los demás */
 function openCartNav(){
+    if(document.getElementById('cartSidenav').style.width != "0px"){ 
+        closeNav('cartSidenav', TYPECOLLAPSE); 
+        return;
+    }
     //Primero se cierran los otros dos navs.
     closeNav('searchSidenav', TYPECOLLAPSE);
     closeNav('contentSidenav', TYPECOLLAPSE);
@@ -26,6 +30,10 @@ function openCartNav(){
 }
 /** Abre el sidenav search y cierra los demás */
 function openSearchNav(){
+    if(document.getElementById('searchSidenav').style.width != "0px"){ 
+        closeNav('searchSidenav', TYPECOLLAPSE); 
+        return;
+    }
     //Primero se cierran los otros dos navs.
     closeNav('cartSidenav', TYPECOLLAPSE);
     closeNav('contentSidenav', TYPECOLLAPSE);
@@ -33,6 +41,10 @@ function openSearchNav(){
 }
 /** Abre el sidenav content y cierra los demás */
 function openContentNav(){
+    if(document.getElementById('contentSidenav').style.width != "0px"){ 
+        closeNav('contentSidenav', TYPECOLLAPSE); 
+        return;
+    }
     //Primero se cierran los otros dos navs.
     closeNav('cartSidenav', TYPECOLLAPSE);
     closeNav('searchSidenav', TYPECOLLAPSE);
