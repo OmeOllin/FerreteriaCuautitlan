@@ -10,10 +10,11 @@
  * @author Luis Linares <luis_linares75@hotmail.com>
  *
  * Created at     : 2021-02-19 20:28:04 
- * Last modified  : 2021-02-19 22:53:01
+ * Last modified  : 2021-03-01 00:57:10
  */
 
 var paginas = [];
+var curPageIx = 0;
 
 function crearMapaPaginas(){
     let url = 'https://omeollin.github.io/FerreteriaCuautitlan/docs/pagesMap.txt';
@@ -40,8 +41,10 @@ function crearMapaPaginas(){
                 });
             }
 
-            //Se carga la portada y se coloca como activa.
+            //Si hay páginas, se carga la primera y se coloca como activa.
             if(paginas.length >= 1){ agregarPagina(paginas[0].filename, true); }
+            //Si no hay páginas, se muestra una página default.
+            if(paginas.length <= 0){ agregarPagina('paginaDefault.png', true); }
 
             let link = document.getElementById('linkCC');
             link.innerHTML = ' 1 / ' + paginas.length;
