@@ -10,7 +10,7 @@
  * @author Luis Linares <luis_linares75@hotmail.com>
  *
  * Created at     : 2021-02-19 20:22:32 
- * Last modified  : 2021-02-19 20:25:31
+ * Last modified  : 2021-03-01 00:57:16
  */
 
 
@@ -49,5 +49,8 @@ function campoCapturaKeypress(element, e){
 }
 
 function deshabilitarCampoCaptura(element){
-    element.parentElement.parentElement.innerHTML = '<a id="linkCC" onclick="habilitarCampoCaptura(this);" class="nav-link px-3" href="#">0 - 0 / ' + paginas.length + '</a>';
+    let pStr = '';
+    if(curPageIx == 0){ pStr = 1 + ' / ' + paginas.length; }
+    if(curPageIx >= 1){ pStr = (curPageIx + 1) + ' - ' + (curPageIx + 2) + ' / ' + paginas.length; }
+    element.parentElement.parentElement.innerHTML = '<a id="linkCC" onclick="habilitarCampoCaptura(this);" class="nav-link px-3" href="#">' + pStr + '</a>';
 }
